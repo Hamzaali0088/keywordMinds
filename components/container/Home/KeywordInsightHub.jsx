@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function KeywordInsightHub() {
-  // Add custom styles for hiding scrollbar
+  // Add custom styles for hiding scrollbar and animations
   React.useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -11,6 +11,66 @@ export default function KeywordInsightHub() {
       }
       .scrollbar-hide::-webkit-scrollbar { 
         display: none;  /* Safari and Chrome */
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+      
+      @keyframes pulse-glow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+      }
+      
+      @keyframes slide-up {
+        0% { transform: translateY(100px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      
+      @keyframes rotate-slow {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes bounce-gentle {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      .floating-icon {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .pulse-glow {
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+      
+      .slide-up {
+        animation: slide-up 1s ease-out both;
+      }
+      
+      .rotate-slow {
+        animation: rotate-slow 20s linear infinite;
+      }
+      
+      .bounce-gentle {
+        animation: bounce-gentle 4s ease-in-out infinite;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%, #f8fafc 100%);
+        background-size: 400% 400%;
+        animation: gradient-shift 15s ease infinite;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      
+      @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
     `;
     document.head.appendChild(style);
@@ -85,9 +145,121 @@ export default function KeywordInsightHub() {
     }
   ]
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      return (
+      <div className="min-h-screen py-16 relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%, #f8fafc 100%)',
+        backgroundSize: '400% 400%',
+        animation: 'gradient-shift 15s ease infinite'
+      }}>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating Technology Icons */}
+        <div className="floating-icon absolute top-20 left-10 text-blue-400/30 text-4xl">
+          <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute top-40 right-20 text-purple-400/25 text-4xl" style={{animationDelay: '1s'}}>
+          <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute bottom-40 left-20 text-green-400/30 text-4xl" style={{animationDelay: '2s'}}>
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute bottom-20 right-10 text-indigo-400/25 text-4xl" style={{animationDelay: '3s'}}>
+          <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        
+        {/* Growth Account Icons */}
+        <div className="floating-icon absolute top-60 left-1/4 text-emerald-400/35 text-4xl" style={{animationDelay: '0.5s'}}>
+          <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute top-80 right-1/3 text-cyan-400/30 text-4xl" style={{animationDelay: '1.5s'}}>
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        
+        {/* Technology Stack Icons */}
+        <div className="floating-icon absolute top-1/3 left-1/3 text-blue-500/25 text-4xl" style={{animationDelay: '2.5s'}}>
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute top-1/2 right-1/4 text-violet-400/30 text-4xl" style={{animationDelay: '3.5s'}}>
+          <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        
+        {/* Data Visualization Icons */}
+        <div className="floating-icon absolute bottom-1/3 left-1/2 text-sky-400/25 text-4xl" style={{animationDelay: '1s'}}>
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute bottom-1/4 right-1/3 text-teal-400/35 text-4xl" style={{animationDelay: '2s'}}>
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+        </div>
+        
+        {/* AI and Analytics Icons */}
+        <div className="floating-icon absolute top-1/4 right-1/6 text-blue-400/30 text-4xl" style={{animationDelay: '0.8s'}}>
+          <svg className="w-9 h-9" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute bottom-1/2 left-1/6 text-emerald-400/25 text-4xl" style={{animationDelay: '1.2s'}}>
+          <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+          </svg>
+        </div>
+        
+        {/* SEO and Marketing Icons */}
+        <div className="floating-icon absolute top-1/3 right-1/6 text-purple-400/30 text-4xl" style={{animationDelay: '2.8s'}}>
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        
+        <div className="floating-icon absolute bottom-1/3 right-1/6 text-cyan-400/25 text-4xl" style={{animationDelay: '1.8s'}}>
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+          </svg>
+        </div>
+        
+        {/* Pulsing Circles */}
+        <div className="pulse-glow absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400/20 rounded-full"></div>
+        <div className="pulse-glow absolute top-3/4 right-1/4 w-6 h-6 bg-purple-400/15 rounded-full" style={{animationDelay: '1s'}}></div>
+        <div className="pulse-glow absolute bottom-1/4 left-1/3 w-3 h-3 bg-green-400/25 rounded-full" style={{animationDelay: '2s'}}></div>
+        <div className="pulse-glow absolute top-1/2 right-1/3 w-5 h-5 bg-cyan-400/20 rounded-full" style={{animationDelay: '0.5s'}}></div>
+        
+        {/* Rotating Elements */}
+        <div className="rotate-slow absolute top-10 right-10 w-16 h-16 border-2 border-blue-400/10 rounded-full"></div>
+        <div className="rotate-slow absolute bottom-10 left-10 w-12 h-12 border-2 border-purple-400/15 rounded-full" style={{animationDirection: 'reverse'}}></div>
+        
+        {/* Bouncing Elements */}
+        <div className="bounce-gentle absolute top-1/2 left-10 w-3 h-3 bg-emerald-400/25 rounded-full"></div>
+        <div className="bounce-gentle absolute bottom-1/2 right-10 w-4 h-4 bg-indigo-400/20 rounded-full" style={{animationDelay: '1s'}}></div>
+      </div>
+      
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {sections.map((section, index) => (
           <Section key={index} {...section} />
         ))}
@@ -167,7 +339,7 @@ const SERPVerificationMockup = () => (
           ))}
         </div>
       </div>
-      <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+      <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center animate-pulse">
         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
@@ -208,6 +380,7 @@ const ShareOfVoiceMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Keyword Trend</h3>
+        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
       </div>
       
       {/* Chart container with slide-in animation */}
@@ -238,7 +411,7 @@ const ShareOfVoiceMockup = () => {
               strokeWidth="2" 
               fill="none"
             />
-            <circle cx="60" cy="20" r="3" fill="#3B82F6" className={isVisible ? 'animate-pulse-in' : ''} />
+            <circle cx="60" cy="20" r="3" fill="#3B82F6" className={`${isVisible ? 'animate-pulse-in' : ''} animate-pulse`} />
           </svg>
           
           {/* Competitor lines with staggered animation */}
@@ -276,7 +449,7 @@ const ShareOfVoiceMockup = () => {
         <div className="text-sm font-medium text-gray-800 mb-2">Wednesday May 12, 2021</div>
         <div className="space-y-1 text-xs">
           <div className={`flex items-center space-x-2 ${isVisible ? 'animate-slide-in' : ''}`} style={{animationDelay: isVisible ? '1.2s' : '0s'}}>
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
             <span>yourwebsite.com - 30%</span>
           </div>
           <div className={`flex items-center space-x-2 ${isVisible ? 'animate-slide-in' : ''}`} style={{animationDelay: isVisible ? '1.4s' : '0s'}}>
@@ -415,7 +588,7 @@ const ReportingMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Dashboard</h3>
-        <button className={`p-2 hover:bg-gray-100 rounded-lg ${isVisible ? 'animate-pulse-in' : ''}`}>
+        <button className={`p-2 hover:bg-gray-100 rounded-lg ${isVisible ? 'animate-pulse-in' : ''} animate-pulse`}>
           <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
           </svg>
@@ -438,7 +611,7 @@ const ReportingMockup = () => {
               <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
-              <span className="text-sm font-medium">1</span>
+              <span className="text-sm font-medium">{i}</span>
             </div>
           </div>
         ))}
@@ -454,7 +627,7 @@ const ReportingMockup = () => {
             className="flex-1 text-xs border border-gray-300 rounded px-2 py-1"
             readOnly
           />
-          <button className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600">
+          <button className="px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 animate-pulse">
             Copy
           </button>
         </div>
@@ -463,6 +636,10 @@ const ReportingMockup = () => {
           <button className="w-full px-3 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600">
             Add Recipient Email
           </button>
+        </div>
+        {/* Floating notification */}
+        <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center animate-ping">
+          <span className="text-xs text-white font-bold">3</span>
         </div>
       </div>
 
@@ -580,6 +757,7 @@ const LookerStudioMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Looker</h3>
+        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className="space-y-4">
@@ -625,7 +803,7 @@ const LookerStudioMockup = () => {
         </div>
         
         {/* Button with bounce-in */}
-        <button className={`w-full px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-bounce-in' : ''}`}>
+        <button className={`w-full px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-bounce-in' : ''} animate-pulse`}>
           + Add To Report
         </button>
       </div>
@@ -740,6 +918,7 @@ const KeywordTaggingMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Projects & Tags</h3>
+        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className="grid grid-cols-2 gap-4">
@@ -769,7 +948,7 @@ const KeywordTaggingMockup = () => {
                   </div>
                 ))}
               </div>
-              <button className={`ml-4 px-2 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''}`}>+</button>
+              <button className={`ml-4 px-2 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''} animate-pulse`}>+</button>
             </div>
           </div>
         </div>
@@ -906,12 +1085,13 @@ const RealTimeDataMockup = () => {
     <div className="space-y-4" ref={mockupRef}>
       {/* Refresh button with pulse-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
-        <button className={`flex items-center space-x-2 px-3 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''}`}>
+        <button className={`flex items-center space-x-2 px-3 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''} animate-pulse`}>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           <span>Refresh Keywords</span>
         </button>
+        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className={`text-lg font-semibold text-gray-800 ${isVisible ? 'animate-fade-in-up' : ''}`}>Dashboard</div>
@@ -1068,6 +1248,7 @@ const LocalMobileMockup = () => {
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Device</h3>
         <h3 className="font-semibold text-gray-800">Locations</h3>
+        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className="space-y-4">
@@ -1089,7 +1270,7 @@ const LocalMobileMockup = () => {
             <input 
               type="text" 
               value="To" 
-              className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm"
+              className="w-full px-3 py-3 border border-gray-300 rounded-lg text-sm animate-pulse"
             />
             <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
               {[
@@ -1209,6 +1390,7 @@ const KeywordResearchMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Competitors Keywords</h3>
+        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className="space-y-4">
@@ -1233,7 +1415,7 @@ const KeywordResearchMockup = () => {
         </div>
         
         {/* Button with pulse-in animation */}
-        <button className={`w-full px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''}`}>
+        <button className={`w-full px-4 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 ${isVisible ? 'animate-pulse-in' : ''} animate-pulse`}>
           Find Keywords
         </button>
         
@@ -1358,6 +1540,7 @@ const AIMonitoringMockup = () => {
       {/* Header with fade-in animation */}
       <div className={`flex justify-between items-center ${isVisible ? 'animate-fade-in' : ''}`}>
         <h3 className="font-semibold text-gray-800">Add Search Term</h3>
+        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
       </div>
       
       <div className="space-y-4">
@@ -1409,7 +1592,7 @@ const AIMonitoringMockup = () => {
         </div>
         
         {/* Save button with bounce-in */}
-        <button className={`w-full px-4 py-2 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 cursor-pointer ${isVisible ? 'animate-bounce-in' : ''}`}>
+        <button className={`w-full px-4 py-2 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 cursor-pointer ${isVisible ? 'animate-bounce-in' : ''} animate-pulse`}>
           Save
         </button>
       </div>
