@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function Groth() {
+export default function Growth() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
