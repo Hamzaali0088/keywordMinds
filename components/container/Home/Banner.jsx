@@ -37,7 +37,7 @@ export default function Banner() {
     return (
         <FullContainer className=' bg-gray-50'>
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  pt-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  pt-20 md:pt-12">
                     {/* Left Section - Text Content */}
                     <div className="space-y-8">
                         {/* Headline */}
