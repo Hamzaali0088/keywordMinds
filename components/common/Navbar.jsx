@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from './Container'
 import FullContainer from './FullContainer'
 
 export default function Navbar() {
+    const [whoWeHelpOpen, setWhoWeHelpOpen] = useState(false);
+
     return (
         <FullContainer>
-            <Container className='flex flex-row justify-between items-center py-4'>
+            <Container className='flex flex-row justify-between items-center py-4'> 
                 {/* Logo */}
                 <div className="flex items-center space-x-2">
                     <div className="relative w-8 h-8">
@@ -29,11 +31,45 @@ export default function Navbar() {
                         </svg>
                     </div>
 
-                    <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
-                        <span className="text-gray-700">Who We Help</span>
-                        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                    {/* Who We Help Dropdown */}
+                    <div 
+                        className="relative"
+                        onMouseEnter={() => setWhoWeHelpOpen(true)}
+                        onMouseLeave={() => setWhoWeHelpOpen(false)}
+                    >
+                        <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                            <span className="text-gray-700">Who We Help</span>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        
+                        {/* Dropdown Menu */}
+                        {whoWeHelpOpen && (
+                            <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                                <div className="p-6 space-y-4">
+                                    <div className="cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors duration-200">
+                                        <div className="font-semibold text-gray-800">SEO Agencies</div>
+                                        <div className="text-sm text-gray-600 mt-1">Agency rank tracking made easy</div>
+                                    </div>
+                                    
+                                    <div className="cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors duration-200">
+                                        <div className="font-semibold text-gray-800">SEO Teams</div>
+                                        <div className="text-sm text-gray-600 mt-1">You can do SEO twice as fast as you think</div>
+                                    </div>
+                                    
+                                    <div className="cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors duration-200">
+                                        <div className="font-semibold text-gray-800">Enterprise SEO</div>
+                                        <div className="text-sm text-gray-600 mt-1">Enterprise rank tracking tool without any limits</div>
+                                    </div>
+                                    
+                                    <div className="cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors duration-200">
+                                        <div className="font-semibold text-gray-800">SEO for Law</div>
+                                        <div className="text-sm text-gray-600 mt-1">Keyword tracking for law firms</div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     <div className="cursor-pointer hover:text-blue-600">
