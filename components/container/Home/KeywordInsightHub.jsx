@@ -271,9 +271,9 @@ export default function KeywordInsightHub() {
 const Section = ({ title, headline, description, cta, visual }) => {
   return (
     <div className="mb-24 last:mb-0">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="flex flex-col lg:flex-row gap-12 items-center">
         {/* Text Content */}
-        <div className="space-y-6">
+        <div className="space-y-6 w-[45%]">
           <div className="text-sm font-semibold text-blue-600 uppercase tracking-wide">
             {title}
           </div>
@@ -295,9 +295,9 @@ const Section = ({ title, headline, description, cta, visual }) => {
         </div>
 
         {/* Visual Mockup */}
-        <div className="relative">
-          <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-8 shadow-2xl">
-            <div className="bg-white rounded-xl p-6 shadow-lg h-80 overflow-y-auto scrollbar-hide">
+        <div className="relative w-[55%]">
+          <div className="bg-gradient-to-br from-black to-purple-700 rounded-2xl px-8  pt-8 shadow-2xl">
+            <div className="bg-white rounded-tr-xl rounded-tl-xl p-6 shadow-lg h-80 overflow-y-auto scrollbar-hide">
               {visual === "serp-verification" && <SERPVerificationMockup />}
               {visual === "share-of-voice" && <ShareOfVoiceMockup />}
               {visual === "reporting" && <ReportingMockup />}
