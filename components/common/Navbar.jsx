@@ -109,9 +109,9 @@ export default function Navbar() {
 
                     {/* Desktop Navigation Menu */}
                     <div className="hidden lg:flex items-center space-x-8">
-                        <div className="flex items-center space-x-1 cursor-pointer group">
-                            <Link href="/features" className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Features</Link>
-                        </div>
+                        <Link href="/features" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            Features
+                        </Link>
 
                         {/* Who We Help Dropdown */}
                         <div 
@@ -126,9 +126,9 @@ export default function Navbar() {
                                 aria-expanded={whoWeHelpOpen}
                                 aria-haspopup="true"
                             >
-                                <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Who We Help</span>
+                                <span className="text-gray-700 group-hover:text-red-600 transition-colors duration-200">Who We Help</span>
                                 <svg 
-                                    className={`w-4 h-4 text-gray-500 group-hover:text-blue-600 transition-all duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
+                                    className={`w-4 h-4 text-gray-500 group-hover:text-red-600 transition-all duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
                                     fill="none" 
                                     stroke="currentColor" 
                                     viewBox="0 0 24 24"
@@ -151,20 +151,20 @@ export default function Navbar() {
                                                 <Link 
                                                     key={index}
                                                     href={item.href} 
-                                                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gradient-to-r hover:from-red-50 hover:to-indigo-50 transition-all duration-200 group cursor-pointer border border-transparent hover:border-blue-100"
+                                                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gradient-to-r hover:from-red-50 hover:to-indigo-50 transition-all duration-200 group cursor-pointer border border-transparent hover:border-red-100"
                                                 >
                                                     <div className="text-2xl group-hover:scale-110 transition-transform duration-200">
                                                         {item.icon}
                                                     </div>
                                                     <div className="flex-1">
-                                                        <div className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
+                                                        <div className="font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">
                                                             {item.title}
                                                         </div>
                                                         <div className="text-sm text-gray-600 mt-1 group-hover:text-gray-700 transition-colors duration-200">
                                                             {item.description}
                                                         </div>
                                                     </div>
-                                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                     </svg>
                                                 </Link>
@@ -175,40 +175,25 @@ export default function Navbar() {
                             )}
                         </div>
 
-                        <Link href="/pricing" className="cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Pricing</span>
+                        <Link href="/pricing" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            Pricing
                         </Link>
 
-                        <div className="flex items-center space-x-1 cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Resources</span>
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-blue-600  transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
+                        <Link href="/blog" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            Blog
+                        </Link>
 
-                        <div className="flex items-center space-x-1 cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Free Tools</span>
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-blue-600 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
+                        <Link href="/integrations" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            Integrations
+                        </Link>
 
-                        <div className="cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Book a Demo</span>
-                        </div>
+                        <Link href="/about" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            About
+                        </Link>
 
-                        <div className="cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Login</span>
-                        </div>
-
-                        <div className="flex items-center space-x-1 cursor-pointer group">
-                            <svg className="w-5 h-5 text-blue-400 group-hover:text-blue-600 transition-colors duration-200" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                            </svg>
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-blue-600 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
+                        <Link href="/contact" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                            Contact
+                        </Link>
                     </div>
 
                     {/* Desktop Sign Up Button */}
@@ -248,7 +233,9 @@ export default function Navbar() {
                     <div className="px-4 py-6 space-y-4">
                         {/* Mobile Navigation Items */}
                         <div className="space-y-3">
-                            <div className="text-gray-700 font-medium py-2">Features</div>
+                            <Link href="/features" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                Features
+                            </Link>
                             
                             {/* Mobile Who We Help Dropdown */}
                             <div className="space-y-2">
@@ -287,11 +274,21 @@ export default function Navbar() {
                                 )}
                             </div>
                             
-                            <div className="text-gray-700 font-medium py-2">Pricing</div>
-                            <div className="text-gray-700 font-medium py-2">Resources</div>
-                            <div className="text-gray-700 font-medium py-2">Free Tools</div>
-                            <div className="text-gray-700 font-medium py-2">Book a Demo</div>
-                            <div className="text-gray-700 font-medium py-2">Login</div>
+                            <Link href="/pricing" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                Pricing
+                            </Link>
+                            <Link href="/blog" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                Blog
+                            </Link>
+                            <Link href="/integrations" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                Integrations
+                            </Link>
+                            <Link href="/about" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                About
+                            </Link>
+                            <Link href="/contact" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                                Contact
+                            </Link>
                         </div>
                         
                         {/* Mobile Sign Up Button */}
