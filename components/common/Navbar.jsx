@@ -110,10 +110,7 @@ export default function Navbar() {
                     {/* Desktop Navigation Menu */}
                     <div className="hidden lg:flex items-center space-x-8">
                         <div className="flex items-center space-x-1 cursor-pointer group">
-                            <span className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Features</span>
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-blue-600 transition-colors duration-200 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
+                            <Link href="/features" className="text-gray-700 group-hover:text-blue-600 transition-colors duration-200">Features</Link>
                         </div>
 
                         {/* Who We Help Dropdown */}

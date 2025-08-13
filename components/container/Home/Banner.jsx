@@ -37,16 +37,13 @@ export default function Banner() {
     return (
         <FullContainer className=' bg-gray-50'>
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  pt-20 md:pt-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center  pt-20 md:pt-32">
                     {/* Left Section - Text Content */}
                     <div className="space-y-8">
                         {/* Headline */}
                         <div>
                             <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                                <span className="relative border-b-3 border-amber-300">
-                                    Track the truth {" "}
-                                </span>
-                                behind everyKeyword
+                                Track keywords. Win rankings. Grow traffic.
                             </h1>
                         </div>
 
@@ -60,11 +57,16 @@ export default function Banner() {
                             </p>
                         </div>
 
-                        {/* CTA Button */}
-                        <div className="space-y-2">
-                            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg">
-                                Start 14-Day Free Trial
-                            </button> 
+                        {/* CTA Buttons */}
+                        <div className="space-y-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg transform hover:scale-105">
+                                    Start Free Trial
+                                </button>
+                                <button className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-gray-50 transform hover:scale-105">
+                                    Book Demo
+                                </button>
+                            </div>
                             <p className="text-sm text-gray-600">No credit card needed</p>
                         </div>
 
