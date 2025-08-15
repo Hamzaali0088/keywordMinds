@@ -280,39 +280,39 @@ export default function Plans() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 sticky top-20 z-10">
         <div></div>
         {/* FREE TRIAL Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <h3 className="text-xl font-medium text-blue-900 mb-4">FREE TRIAL</h3>
-          <button className="w-full py-3 px-6 border-1 border-red-500 text-red-500 font-medium rounded-lg hover:bg-red-500 hover:text-white transition-colors duration-200">
+        <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-text-secondary/20">
+          <h3 className="text-xl font-medium text-text-primary mb-4">FREE TRIAL</h3>
+          <button className="w-full py-3 px-6 border border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors duration-200">
             Start Free Trial
           </button>
         </div>
 
         {/* BUSINESS Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <h3 className="text-xl font-medium text-blue-900 mb-4">BUSINESS</h3>
-          <button className="w-full py-3 px-6 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200 flex items-center justify-center gap-2">
+        <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-text-secondary/20">
+          <h3 className="text-xl font-medium text-text-primary mb-4">BUSINESS</h3>
+          <button className="w-full py-3 px-6 bg-primary text-white font-medium rounded-lg hover:bg-secondary transition-colors duration-200 flex items-center justify-center gap-2">
             Get Started 🚀
             <ArrowRight className="w-4 h-4"/>
           </button>
         </div>
 
         {/* ENTERPRISE Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-          <h3 className="text-xl font-medium text-blue-900 mb-4">ENTERPRISE</h3>
-          <button className="w-full py-3 px-6 border-1 border-red-500 text-red-500 font-medium rounded-lg hover:bg-red-500 hover:text-white transition-colors duration-200">
+        <div className="bg-white rounded-lg shadow-lg p-6 text-center border border-text-secondary/20">
+          <h3 className="text-xl font-medium text-text-primary mb-4">ENTERPRISE</h3>
+          <button className="w-full py-3 px-6 border border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors duration-200">
             Get Quote
           </button>
         </div>
       </div>
 
       {/* Desktop Table (lg and up) */}
-      <div className="hidden lg:block bg-gray-50 rounded-lg overflow-hidden">
+      <div className="hidden lg:block bg-background-light rounded-lg overflow-hidden border border-text-secondary/20">
         {/* Table Header */}
-        <div className="grid grid-cols-4 bg-gray-100">
-          <div className="p-4 font-semibold text-gray-700">Features</div>
-          <div className="p-4 font-semibold text-gray-700 text-center">FREE TRIAL</div>
-          <div className="p-4 font-semibold text-gray-700 text-center">BUSINESS</div>
-          <div className="p-4 font-semibold text-gray-700 text-center">ENTERPRISE</div>
+        <div className="grid grid-cols-4 bg-text-secondary/10">
+          <div className="p-4 font-semibold text-text-primary">Features</div>
+          <div className="p-4 font-semibold text-text-primary text-center">FREE TRIAL</div>
+          <div className="p-4 font-semibold text-text-primary text-center">BUSINESS</div>
+          <div className="p-4 font-semibold text-text-primary text-center">ENTERPRISE</div>
         </div>
 
         {/* Feature Rows */}
@@ -320,25 +320,25 @@ export default function Plans() {
           <div 
             key={feature.name} 
             className={`grid grid-cols-4 ${
-              index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+              index % 2 === 0 ? 'bg-white' : 'bg-background-light'
             }`}
           >
             {/* Feature Name */}
             <div className="p-4 flex items-center gap-2">
-              <span className="text-gray-700">{feature.name}</span>
-              <Info className="w-4 h-4 text-gray-400" />
+              <span className="text-text-primary">{feature.name}</span>
+              <Info className="w-4 h-4 text-text-secondary" />
             </div>
 
             {/* FREE TRIAL */}
             <div className="p-4 text-center">
               {typeof feature.freeTrial === 'boolean' ? (
                 feature.freeTrial ? (
-                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                  <Check className="w-5 h-5 text-primary mx-auto" />
                 ) : (
-                  <span className="text-gray-400">—</span>
+                  <span className="text-text-secondary/40">—</span>
                 )
               ) : (
-                <span className="text-gray-700 font-medium">{feature.freeTrial}</span>
+                <span className="text-text-primary font-medium">{feature.freeTrial}</span>
               )}
             </div>
 
@@ -346,12 +346,12 @@ export default function Plans() {
             <div className="p-4 text-center">
               {typeof feature.business === 'boolean' ? (
                 feature.business ? (
-                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                  <Check className="w-5 h-5 text-primary mx-auto" />
                 ) : (
-                  <span className="text-gray-400">—</span>
+                  <span className="text-text-secondary/40">—</span>
                 )
               ) : (
-                <span className="text-gray-700 font-medium">{feature.business}</span>
+                <span className="text-text-primary font-medium">{feature.business}</span>
               )}
             </div>
 
@@ -359,12 +359,12 @@ export default function Plans() {
             <div className="p-4 text-center">
               {typeof feature.enterprise === 'boolean' ? (
                 feature.enterprise ? (
-                  <Check className="w-5 h-5 text-green-500 mx-auto" />
+                  <Check className="w-5 h-5 text-primary mx-auto" />
                 ) : (
-                  <span className="text-gray-400">—</span>
+                  <span className="text-text-secondary/40">—</span>
                 )
               ) : (
-                <span className="text-gray-700 font-medium">{feature.enterprise}</span>
+                <span className="text-text-primary font-medium">{feature.enterprise}</span>
               )}
             </div>
           </div>
@@ -374,26 +374,26 @@ export default function Plans() {
       {/* Small Screen Tables (sm to lg) */}
       <div className="lg:hidden space-y-6">
         {/* FREE TRIAL Table */}
-        <div className="bg-gray-50 rounded-lg overflow-hidden">
-          <div className="bg-red-500 p-4">
+        <div className="bg-background-light rounded-lg overflow-hidden border border-text-secondary/20">
+          <div className="bg-primary p-4">
             <h3 className="text-white font-semibold text-center text-lg">FREE TRIAL</h3>
           </div>
           <div className="bg-white">
             {features.map((feature, index) => (
-              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-gray-100' : ''}`}>
+              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-text-secondary/10' : ''}`}>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-700 text-sm">{feature.name}</span>
-                  <Info className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                  <span className="text-text-primary text-sm">{feature.name}</span>
+                  <Info className="w-4 h-4 text-text-secondary flex-shrink-0" />
                 </div>
                 <div className="text-center">
                   {typeof feature.freeTrial === 'boolean' ? (
                     feature.freeTrial ? (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <Check className="w-5 h-5 text-primary" />
                     ) : (
-                      <span className="text-gray-400">—</span>
+                      <span className="text-text-secondary/40">—</span>
                     )
                   ) : (
-                    <span className="text-gray-700 font-medium text-sm">{feature.freeTrial}</span>
+                    <span className="text-text-primary font-medium text-sm">{feature.freeTrial}</span>
                   )}
                 </div>
               </div>
@@ -402,26 +402,26 @@ export default function Plans() {
         </div>
 
         {/* BUSINESS Table */}
-        <div className="bg-gray-50 rounded-lg overflow-hidden">
-          <div className="bg-red-500 p-4">
+        <div className="bg-background-light rounded-lg overflow-hidden border border-text-secondary/20">
+          <div className="bg-primary p-4">
             <h3 className="text-white font-semibold text-center text-lg">BUSINESS</h3>
           </div>
           <div className="bg-white">
             {features.map((feature, index) => (
-              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-gray-100' : ''}`}>
+              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-text-secondary/10' : ''}`}>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-700 text-sm">{feature.name}</span>
-                  <Info className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                  <span className="text-text-primary text-sm">{feature.name}</span>
+                  <Info className="w-4 h-4 text-text-secondary flex-shrink-0" />
                 </div>
                 <div className="text-center">
                   {typeof feature.business === 'boolean' ? (
                     feature.business ? (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <Check className="w-5 h-5 text-primary" />
                     ) : (
-                      <span className="text-gray-400">—</span>
+                      <span className="text-text-secondary/40">—</span>
                     )
                   ) : (
-                    <span className="text-gray-700 font-medium text-sm">{feature.business}</span>
+                    <span className="text-text-primary font-medium text-sm">{feature.business}</span>
                   )}
                 </div>
               </div>
@@ -430,26 +430,26 @@ export default function Plans() {
         </div>
 
         {/* ENTERPRISE Table */}
-        <div className="bg-gray-50 rounded-lg overflow-hidden">
-          <div className="bg-red-500 p-4">
+        <div className="bg-background-light rounded-lg overflow-hidden border border-text-secondary/20">
+          <div className="bg-primary p-4">
             <h3 className="text-white font-semibold text-center text-lg">ENTERPRISE</h3>
           </div>
           <div className="bg-white">
             {features.map((feature, index) => (
-              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-gray-100' : ''}`}>
+              <div key={feature.name} className={`p-4 flex items-center justify-between ${index !== features.length - 1 ? 'border-b border-text-secondary/10' : ''}`}>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-700 text-sm">{feature.name}</span>
-                  <Info className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                  <span className="text-text-primary text-sm">{feature.name}</span>
+                  <Info className="w-4 h-4 text-text-secondary flex-shrink-0" />
                 </div>
                 <div className="text-center">
                   {typeof feature.enterprise === 'boolean' ? (
                     feature.enterprise ? (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <Check className="w-5 h-5 text-primary" />
                     ) : (
-                      <span className="text-gray-400">—</span>
+                      <span className="text-text-secondary/40">—</span>
                     )
                   ) : (
-                    <span className="text-gray-700 font-medium text-sm">{feature.enterprise}</span>
+                    <span className="text-text-primary font-medium text-sm">{feature.enterprise}</span>
                   )}
                 </div>
               </div>
@@ -460,7 +460,7 @@ export default function Plans() {
       
       {/* Tax Notice */}
       <div className="mt-8 text-center">
-        <p className="text-gray-600 text-sm">
+        <p className="text-text-secondary text-sm">
           All prices are exclusive of applicable taxes.
         </p>
       </div>

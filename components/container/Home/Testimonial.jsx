@@ -108,18 +108,18 @@ export default function Testimonial() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
             Our keyword tracker is trusted by top SEOs fighting to rank #1
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
             Keyword.com is ideal for{' '}
-            <span className="text-blue-600 font-semibold">SEO Agencies</span>,{' '}
-            <span className="text-blue-600 font-semibold">in-house SEO teams</span> and{' '}
-            <span className="text-blue-600 font-semibold">enterprise solutions</span>. 
+            <span className="text-primary font-semibold">SEO Agencies</span>,{' '}
+            <span className="text-primary font-semibold">in-house SEO teams</span> and{' '}
+            <span className="text-primary font-semibold">enterprise solutions</span>. 
             Our customers love our{' '}
-            <span className="text-blue-600 font-semibold">rank tracker dashboards</span>,{' '}
-            <span className="text-blue-600 font-semibold">keyword API</span> and{' '}
-            <span className="text-blue-600 font-semibold">share of voice tracking</span>.
+            <span className="text-primary font-semibold">rank tracker dashboards</span>,{' '}
+            <span className="text-primary font-semibold">keyword API</span> and{' '}
+            <span className="text-primary font-semibold">share of voice tracking</span>.
           </p>
         </div>
 
@@ -129,11 +129,11 @@ export default function Testimonial() {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
+            className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border border-primary/20 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
               currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95'
             }`}
           >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -141,11 +141,11 @@ export default function Testimonial() {
           <button
             onClick={nextSlide}
             disabled={currentSlide === maxSlide}
-            className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border border-gray-200 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
+            className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white border border-primary/20 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
               currentSlide === maxSlide ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95'
             }`}
           >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -155,28 +155,28 @@ export default function Testimonial() {
             {getVisibleTestimonials().map((testimonial, index) => (
               <div
                 key={currentSlide + index}
-                className="bg-gray-50 rounded-lg p-6 h-full flex flex-col justify-between transition-all duration-500 ease-in-out hover:shadow-lg transform hover:-translate-y-1"
+                className="bg-background-light rounded-lg p-6 h-full flex flex-col justify-between transition-all duration-500 ease-in-out hover:shadow-lg transform hover:-translate-y-1"
                 style={{
                   animation: 'fadeInUp 0.5s ease-out'
                 }}
               >
                 <div className="flex-1">
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6 italic line-clamp-3">
+                  <p className="text-text-primary text-lg leading-relaxed mb-6 italic line-clamp-3">
                     "{testimonial.quote}"
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full mr-4 flex-shrink-0">
                     {/* Placeholder for profile image */}
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                       <span className="text-white font-semibold text-sm">
                         {testimonial.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.company}</p>
+                    <h4 className="font-semibold text-text-primary">{testimonial.name}</h4>
+                    <p className="text-text-secondary text-sm">{testimonial.company}</p>
                   </div>
                 </div>
               </div>
@@ -191,8 +191,8 @@ export default function Testimonial() {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ease-in-out ${
                   index === currentSlide
-                    ? 'bg-gray-800 scale-125'
-                    : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
+                    ? 'bg-primary scale-125'
+                    : 'bg-primary/30 hover:bg-primary/50 hover:scale-110'
                 }`}
               />
             ))}

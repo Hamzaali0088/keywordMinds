@@ -4,14 +4,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Color Kit - Simplified Brand Colors */
+  --color-primary: #2563EB;        /* Primary Brand Color - Main buttons, highlights, links */
+  --color-secondary: #06B6D4;      /* Secondary Accent - Secondary buttons, hover effects */
+  --color-text-primary: #1F2937;     /* Text Primary - Headings, main content */
+  --color-text-secondary: #6B7280;   /* Text Secondary - Subheadings, descriptions */
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-primary: #E3000A;
-  --color-secondary: #7E00D4;
-  --color-tertiary: #000000;
-  --color-quaternary: #000000;
+  --color-primary: #2563EB;
+  --color-secondary: #06B6D4;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -132,4 +138,20 @@ body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+
+/* Color Utility Classes */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-primary-dark { color: var(--color-text-primary); }
+.text-secondary-light { color: var(--color-text-secondary); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+
+/* Text color utilities */
+.text-text-primary { color: var(--color-text-primary); }
+.text-text-secondary { color: var(--color-text-secondary); }
 

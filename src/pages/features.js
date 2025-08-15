@@ -18,13 +18,13 @@ export default function Features() {
       <Navbar />
       
       {/* Hero Section */}
-      <FullContainer className="bg-gray-50">
+      <FullContainer className="bg-background-light">
         <Container>
           <div className="text-center py-20 md:py-32">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
               Powerful Features for SEO Success
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Everything you need to track keywords, analyze competitors, and dominate search results. 
               Built for SEO agencies, in-house teams, and enterprise solutions.
             </p>
@@ -46,21 +46,21 @@ export default function Features() {
       <FullContainer className="bg-white py-20">
         <Container>
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
               Ready to Transform Your SEO?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
               Join thousands of SEO professionals who trust our platform to track keywords and win rankings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg transform hover:scale-105">
+              <button className="bg-primary hover:bg-secondary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg transform hover:scale-105">
                 Start Free Trial
               </button>
-              <button className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-gray-50 transform hover:scale-105">
+              <button className="border-2 border-secondary text-secondary font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-primary hover:text-white transform hover:scale-105">
                 Schedule Demo
               </button>
             </div>
-            <p className="text-sm text-gray-600 mt-4">No credit card required • 14-day free trial</p>
+            <p className="text-sm text-text-secondary mt-4">No credit card required • 14-day free trial</p>
           </div>
         </Container>
       </FullContainer>

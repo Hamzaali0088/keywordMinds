@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
 
             {/* CTA Banner */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 py-12 relative z-10">
+            {/* <div className="bg-gradient-to-r from-red-600 to-red-700 py-12 relative z-10">
                 <Container>
                     <div className="text-center">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -43,7 +43,7 @@ export default function Footer() {
                         <p className="text-sm text-red-200 mt-4">No credit card required • 14-day free trial</p>
                     </div>
                 </Container>
-            </div>
+            </div> */}
 
             {/* Main Footer Content */}
             <Container className="relative z-10">

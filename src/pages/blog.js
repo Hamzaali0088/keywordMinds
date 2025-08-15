@@ -4,6 +4,7 @@ import Container from '../../components/common/Container'
 import FullContainer from '../../components/common/FullContainer'
 import Footer from '../../components/common/Footer'
 import { Calendar, Clock, User, ArrowRight, Search, TrendingUp, BookOpen, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -25,7 +26,7 @@ export default function Blog() {
       author: "Sarah Johnson",
       date: "March 15, 2024",
       readTime: "8 min read",
-      image: "/st-images/blog/local-seo-tracking.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: true
     },
     {
@@ -36,7 +37,7 @@ export default function Blog() {
       author: "Michael Chen",
       date: "March 12, 2024",
       readTime: "12 min read",
-      image: "/st-images/blog/agency-case-study.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: true
     },
     {
@@ -47,7 +48,7 @@ export default function Blog() {
       author: "Emily Rodriguez",
       date: "March 10, 2024",
       readTime: "5 min read",
-      image: "/st-images/blog/ai-tracking-update.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -58,7 +59,7 @@ export default function Blog() {
       author: "David Kim",
       date: "March 8, 2024",
       readTime: "15 min read",
-      image: "/st-images/blog/keyword-research-guide.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -69,7 +70,7 @@ export default function Blog() {
       author: "Sarah Johnson",
       date: "March 5, 2024",
       readTime: "6 min read",
-      image: "/st-images/blog/rank-tracking-mistakes.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -80,7 +81,7 @@ export default function Blog() {
       author: "Emily Rodriguez",
       date: "March 3, 2024",
       readTime: "10 min read",
-      image: "/st-images/blog/white-label-reports.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -91,7 +92,7 @@ export default function Blog() {
       author: "Michael Chen",
       date: "February 28, 2024",
       readTime: "11 min read",
-      image: "/st-images/blog/ecommerce-case-study.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -102,7 +103,7 @@ export default function Blog() {
       author: "David Kim",
       date: "February 25, 2024",
       readTime: "9 min read",
-      image: "/st-images/blog/api-integration.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     },
     {
@@ -113,7 +114,7 @@ export default function Blog() {
       author: "Sarah Johnson",
       date: "February 22, 2024",
       readTime: "7 min read",
-      image: "/st-images/blog/serp-features.jpg",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       featured: false
     }
   ]
@@ -129,16 +130,16 @@ export default function Blog() {
       <Navbar />
       
       {/* Hero Section */}
-      <FullContainer className="bg-gradient-to-br from-gray-50 to-gray-100">
+      <FullContainer className="bg-gradient-to-br from-background-light to-text-secondary/10">
         <Container>
           <div className="pt-20 md:pt-32 pb-16 text-center">
-            <div className="inline-block bg-red-200 text-red-800 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-primary/20 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
               Blog & Resources
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight">
               SEO Insights & Resources
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Expert guides, case studies, and tips to help you master SEO and rank tracking. 
               Stay ahead with the latest strategies and platform updates.
             </p>
@@ -150,29 +151,26 @@ export default function Blog() {
       <FullContainer className="bg-white py-20">
         <Container>
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
               Featured Articles
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredPosts.map((post, index) => (
                 <div
                   key={post.id}
-                  className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-text-secondary/20"
                   style={{
                     animation: 'fadeInUp 0.6s ease-out',
                     animationDelay: `${index * 0.1}s`,
                     animationFillMode: 'both'
                   }}
                 >
-                  <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-2xl flex items-center justify-center">
-                    <div className="text-gray-500 text-center">
-                      <BookOpen className="w-12 h-12 mx-auto mb-2" />
-                      <span className="text-sm">Blog Image</span>
-                    </div>
+                  <div className="h-48 bg-gradient-to-br from-background-light to-text-secondary/20 rounded-t-2xl overflow-hidden">
+                    <Image src={post.image} alt={post.title} width={800} height={400} className='w-full h-full object-cover' />
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                      <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-medium">
+                    <div className="flex items-center space-x-4 text-sm text-text-secondary mb-3">
+                      <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
                         {categories.find(cat => cat.id === post.category)?.name}
                       </span>
                       <div className="flex items-center space-x-1">
@@ -184,20 +182,20 @@ export default function Blog() {
                         <span>{post.readTime}</span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-200">
+                    <h3 className="text-xl font-bold text-text-primary mb-3 group-hover:text-primary transition-colors duration-200">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-text-secondary mb-4 leading-relaxed">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                          <User className="w-4 h-4 text-gray-600" />
+                        <div className="w-8 h-8 bg-background-light rounded-full flex items-center justify-center">
+                          <User className="w-4 h-4 text-text-secondary" />
                         </div>
-                        <span className="text-sm text-gray-600">{post.author}</span>
+                        <span className="text-sm text-text-secondary">{post.author}</span>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-red-500 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform duration-200" />
                     </div>
                   </div>
                 </div>
@@ -208,11 +206,11 @@ export default function Blog() {
       </FullContainer>
 
       {/* Categories & All Posts */}
-      <FullContainer className="bg-gray-50 py-20">
+      <FullContainer className="bg-background-light py-20">
         <Container>
           {/* Category Filter */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Browse by Category</h2>
+            <h2 className="text-3xl font-bold text-text-primary mb-8">Browse by Category</h2>
             <div className="flex flex-wrap gap-4">
               {categories.map((category) => {
                 const IconComponent = category.icon
@@ -222,8 +220,8 @@ export default function Blog() {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                       selectedCategory === category.id
-                        ? 'bg-red-600 text-white shadow-lg'
-                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                        ? 'bg-primary text-white shadow-lg'
+                        : 'bg-white text-text-secondary hover:bg-background-light border border-text-secondary/20'
                     }`}
                   >
                     <IconComponent className="w-5 h-5" />
@@ -239,22 +237,21 @@ export default function Blog() {
             {filteredPosts.map((post, index) => (
               <div
                 key={post.id}
-                className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-text-secondary/20"
                 style={{
                   animation: 'fadeInUp 0.6s ease-out',
                   animationDelay: `${index * 0.1}s`,
                   animationFillMode: 'both'
                 }}
               >
-                <div className="h-40 bg-gradient-to-br from-gray-200 to-gray-300 rounded-t-xl flex items-center justify-center">
-                  <div className="text-gray-500 text-center">
-                    <BookOpen className="w-8 h-8 mx-auto mb-2" />
-                    <span className="text-xs">Blog Image</span>
+                <div className="h-40 bg-gradient-to-br from-background-light to-text-secondary/20 rounded-t-xl flex items-center justify-center">
+                  <div className="text-text-secondary text-center">
+                    <Image src={post.image} alt={post.title} width={1900} height={1900} className='w-full h-full object-cover' />
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                    <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="flex items-center space-x-4 text-sm text-text-secondary mb-3">
+                    <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
                       {categories.find(cat => cat.id === post.category)?.name}
                     </span>
                     <div className="flex items-center space-x-1">
@@ -262,20 +259,20 @@ export default function Blog() {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-200 line-clamp-2">
+                  <h3 className="text-lg font-bold text-text-primary mb-3 group-hover:text-primary transition-colors duration-200 line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-text-secondary mb-4 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
-                        <User className="w-3 h-3 text-gray-600" />
+                      <div className="w-6 h-6 bg-background-light rounded-full flex items-center justify-center">
+                        <User className="w-3 h-3 text-text-secondary" />
                       </div>
-                      <span className="text-sm text-gray-600">{post.author}</span>
+                      <span className="text-sm text-text-secondary">{post.author}</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-red-500 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
                 </div>
               </div>
@@ -283,22 +280,22 @@ export default function Blog() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="mt-20 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-center text-white">
+          <div className="mt-20 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Stay Updated with SEO Insights</h3>
-            <p className="text-red-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
               Get the latest SEO tips, case studies, and platform updates delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                className="flex-1 px-4 py-3 rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <button className="bg-white text-red-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+              <button className="bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-background-light transition-colors duration-200">
                 Subscribe
               </button>
             </div>
-            <p className="text-xs text-red-200 mt-3">No spam, unsubscribe anytime</p>
+            <p className="text-xs text-white/60 mt-3">No spam, unsubscribe anytime</p>
           </div>
         </Container>
       </FullContainer>

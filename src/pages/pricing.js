@@ -23,7 +23,7 @@ export default function pricing() {
     ]   
 
   return (
-    <div>
+    <div className="bg-background-light">
         <Navbar/>
         <Pricing/>
         <Popular/>

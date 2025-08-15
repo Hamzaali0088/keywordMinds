@@ -121,40 +121,40 @@ export default function Integrations() {
   const getColorClasses = (color) => {
     const colorMap = {
       blue: {
-        bg: 'bg-blue-50',
-        icon: 'bg-blue-500',
-        text: 'text-blue-600',
-        border: 'border-blue-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       green: {
-        bg: 'bg-green-50',
-        icon: 'bg-green-500',
-        text: 'text-green-600',
-        border: 'border-green-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       },
       purple: {
-        bg: 'bg-purple-50',
-        icon: 'bg-purple-500',
-        text: 'text-purple-600',
-        border: 'border-purple-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       orange: {
-        bg: 'bg-orange-50',
-        icon: 'bg-orange-500',
-        text: 'text-orange-600',
-        border: 'border-orange-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       },
       yellow: {
-        bg: 'bg-yellow-50',
-        icon: 'bg-yellow-500',
-        text: 'text-yellow-600',
-        border: 'border-yellow-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       red: {
-        bg: 'bg-red-50',
-        icon: 'bg-red-500',
-        text: 'text-red-600',
-        border: 'border-red-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       }
     }
     return colorMap[color] || colorMap.blue
@@ -165,16 +165,16 @@ export default function Integrations() {
       <Navbar />
       
       {/* Hero Section */}
-      <FullContainer className="bg-gradient-to-br from-gray-50 to-gray-100">
+      <FullContainer className="bg-gradient-to-br from-background-light to-text-secondary/10">
         <Container>
           <div className="pt-20 md:pt-32 pb-16 text-center">
-            <div className="inline-block bg-red-200 text-red-800 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-primary/20 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
               Integrations
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight">
               Connect Your Workflow
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Seamlessly integrate KeywordMinds with your favorite tools and platforms. 
               From Google Analytics to custom APIs, we've got you covered.
             </p>
@@ -188,10 +188,10 @@ export default function Integrations() {
           {integrations.map((category, categoryIndex) => (
             <div key={category.category} className="mb-20">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
                   {category.category}
                 </h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                <p className="text-xl text-text-secondary max-w-2xl mx-auto">
                   {category.category === "Google Tools" && "Integrate with Google's ecosystem for comprehensive analytics"}
                   {category.category === "BI Dashboards" && "Connect to leading business intelligence platforms"}
                   {category.category === "APIs & Development" && "Build custom integrations with our developer tools"}
@@ -214,8 +214,8 @@ export default function Integrations() {
                       }}
                     >
                       {/* Screenshot Placeholder */}
-                      <div className="h-32 bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl mb-6 flex items-center justify-center">
-                        <div className="text-gray-500 text-center">
+                      <div className="h-32 bg-gradient-to-br from-background-light to-text-secondary/20 rounded-xl mb-6 flex items-center justify-center">
+                        <div className="text-text-secondary text-center">
                           <IconComponent className="w-8 h-8 mx-auto mb-2" />
                           <span className="text-xs">Integration Screenshot</span>
                         </div>
@@ -226,7 +226,7 @@ export default function Integrations() {
                         <div className={`w-12 h-12 ${colors.icon} rounded-lg flex items-center justify-center`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
-                        <span className="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
                           {integration.status}
                         </span>
                       </div>
@@ -235,7 +235,7 @@ export default function Integrations() {
                       <h3 className={`text-xl font-bold ${colors.text} mb-3 group-hover:scale-105 transition-transform duration-300`}>
                         {integration.name}
                       </h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
+                      <p className="text-text-secondary mb-4 leading-relaxed">
                         {integration.description}
                       </p>
 
@@ -243,19 +243,19 @@ export default function Integrations() {
                       <div className="space-y-2 mb-6">
                         {integration.benefits.map((benefit, benefitIndex) => (
                           <div key={benefitIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{benefit}</span>
+                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                            <span className="text-sm text-text-primary">{benefit}</span>
                           </div>
                         ))}
                       </div>
 
                       {/* Action */}
                       <div className="flex items-center justify-between">
-                        <button className="flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 transition-colors duration-200">
+                        <button className="flex items-center space-x-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-200">
                           <span>Learn More</span>
                           <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="flex items-center space-x-2 bg-white text-gray-700 px-3 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors duration-200 border border-gray-200">
+                        <button className="flex items-center space-x-2 bg-white text-text-secondary px-3 py-2 rounded-lg text-sm font-medium hover:bg-background-light transition-colors duration-200 border border-text-secondary/20">
                           <Play className="w-4 h-4" />
                           <span>Demo</span>
                         </button>
@@ -270,59 +270,59 @@ export default function Integrations() {
       </FullContainer>
 
       {/* API Documentation Section */}
-      <FullContainer className="bg-gray-50 py-20">
+      <FullContainer className="bg-background-light py-20">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
                 Developer-Friendly API
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-text-secondary leading-relaxed">
                 Build custom integrations with our comprehensive REST API. Access real-time rank tracking data, 
                 set up webhooks, and automate your SEO workflows.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-gray-700">RESTful API with JSON responses</span>
+                  <span className="text-text-primary">RESTful API with JSON responses</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-gray-700">Comprehensive documentation</span>
+                  <span className="text-text-primary">Comprehensive documentation</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-gray-700">SDKs for popular languages</span>
+                  <span className="text-text-primary">SDKs for popular languages</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-gray-700">Webhook support for real-time updates</span>
+                  <span className="text-text-primary">Webhook support for real-time updates</span>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                <button className="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                   View API Docs
                 </button>
-                <button className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-gray-50">
+                <button className="border-2 border-secondary text-secondary font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-primary hover:text-white">
                   Get API Key
                 </button>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+            <div className="bg-white p-6 rounded-2xl shadow-lg border border-text-secondary/20">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">API Example</h3>
+                <h3 className="text-lg font-semibold text-text-primary">API Example</h3>
                 <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
                 </div>
               </div>
               <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
@@ -346,69 +346,69 @@ export default function Integrations() {
       <FullContainer className="bg-white py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
               Why Integrate?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
               Connect your rank tracking data with your existing tools to create powerful, automated workflows.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Save Time</h3>
-              <p className="text-gray-600">Automate data collection and reporting across all your tools</p>
+              <h3 className="text-xl font-bold text-text-primary mb-2">Save Time</h3>
+              <p className="text-text-secondary">Automate data collection and reporting across all your tools</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Better Insights</h3>
-              <p className="text-gray-600">Combine data from multiple sources for comprehensive analysis</p>
+              <h3 className="text-xl font-bold text-text-primary mb-2">Better Insights</h3>
+              <p className="text-text-secondary">Combine data from multiple sources for comprehensive analysis</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Team Collaboration</h3>
-              <p className="text-gray-600">Share data seamlessly across your entire team</p>
+              <h3 className="text-xl font-bold text-text-primary mb-2">Team Collaboration</h3>
+              <p className="text-text-secondary">Share data seamlessly across your entire team</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-red-600" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Data Security</h3>
-              <p className="text-gray-600">Enterprise-grade security for all your integrations</p>
+              <h3 className="text-xl font-bold text-text-primary mb-2">Data Security</h3>
+              <p className="text-text-secondary">Enterprise-grade security for all your integrations</p>
             </div>
           </div>
         </Container>
       </FullContainer>
 
       {/* CTA Section */}
-      <FullContainer className="bg-gradient-to-r from-red-600 to-red-700 py-20">
+      <FullContainer className="bg-gradient-to-r from-primary to-secondary py-20">
         <Container>
           <div className="text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Integrate?
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
               Start connecting your tools today and unlock the full potential of your rank tracking data.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-gray-100 transform hover:scale-105">
+              <button className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-background-light transform hover:scale-105">
                 Start Free Trial
               </button>
-              <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-white hover:text-red-600 transform hover:scale-105">
+              <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-white hover:text-primary transform hover:scale-105">
                 Contact Sales
               </button>
             </div>
-            <p className="text-sm opacity-75 mt-4">All integrations included in your plan</p>
+            <p className="text-sm text-white/60 mt-4">All integrations included in your plan</p>
           </div>
         </Container>
       </FullContainer>

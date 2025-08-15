@@ -49,28 +49,28 @@ export default function CoreBenefits() {
   const getColorClasses = (color) => {
     const colorMap = {
       blue: {
-        bg: 'bg-blue-50',
-        icon: 'bg-blue-500',
-        text: 'text-blue-600',
-        border: 'border-blue-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       green: {
-        bg: 'bg-green-50',
-        icon: 'bg-green-500',
-        text: 'text-green-600',
-        border: 'border-green-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       },
       purple: {
-        bg: 'bg-purple-50',
-        icon: 'bg-purple-500',
-        text: 'text-purple-600',
-        border: 'border-purple-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       red: {
-        bg: 'bg-red-50',
-        icon: 'bg-red-500',
-        text: 'text-red-600',
-        border: 'border-red-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       }
     }
     return colorMap[color] || colorMap.blue
@@ -81,10 +81,10 @@ export default function CoreBenefits() {
       <Container>
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
             Everything you need to track keywords and win rankings
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Powerful features designed for SEO agencies, in-house teams, and enterprise solutions. 
             Get the insights you need to dominate search results.
           </p>
@@ -115,7 +115,7 @@ export default function CoreBenefits() {
                 <h3 className={`text-xl font-bold ${colors.text} mb-4 group-hover:scale-105 transition-transform duration-300`}>
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   {benefit.description}
                 </p>
 
@@ -129,15 +129,15 @@ export default function CoreBenefits() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center space-x-4">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg transform hover:scale-105">
+            <button className="bg-primary hover:bg-secondary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 shadow-lg transform hover:scale-105">
               Start Free Trial
             </button>
-            <span className="text-gray-500">or</span>
-            <button className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-gray-50">
+            <span className="text-text-secondary">or</span>
+            <button className="border-2 border-secondary text-secondary font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-primary hover:text-white">
               Book Demo
             </button>
           </div>
-          <p className="text-sm text-gray-600 mt-4">No credit card required • 14-day free trial</p>
+          <p className="text-sm text-text-secondary mt-4">No credit card required • 14-day free trial</p>
         </div>
       </Container>
 

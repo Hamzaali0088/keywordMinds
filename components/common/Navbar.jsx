@@ -98,18 +98,18 @@ export default function Navbar() {
                         <div className="relative w-8 h-8">
                             {/* Stylized K with overlapping shapes */}
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-6 h-6 bg-blue-500 rounded-sm transform rotate-12 transition-transform duration-300 hover:rotate-45"></div>
-                                <div className="w-6 h-6 bg-yellow-400 rounded-sm transform -rotate-12 absolute transition-transform duration-300 hover:-rotate-45"></div>
-                                <div className="w-6 h-6 bg-red-500 rounded-sm transform rotate-6 absolute transition-transform duration-300 hover:rotate-12"></div>
+                                                            <div className="w-6 h-6 bg-primary rounded-sm transform rotate-12 transition-transform duration-300 hover:rotate-45"></div>
+                            <div className="w-6 h-6 bg-secondary rounded-sm transform -rotate-12 absolute transition-transform duration-300 hover:-rotate-45"></div>
+                            <div className="w-6 h-6 bg-primary rounded-sm transform rotate-6 absolute transition-transform duration-300 hover:rotate-12"></div>
                             </div>
                             <span className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">K</span>
                         </div>
-                        <span className="text-gray-700 font-medium">keyword.com</span>
+                        <span className="text-text-primary font-medium">keyword.com</span>
                     </Link>
 
                     {/* Desktop Navigation Menu */}
                     <div className="hidden lg:flex items-center space-x-8">
-                        <Link href="/features" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/features" className="text-text-primary hover:text-primary transition-colors duration-200">
                             Features
                         </Link>
 
@@ -126,9 +126,9 @@ export default function Navbar() {
                                 aria-expanded={whoWeHelpOpen}
                                 aria-haspopup="true"
                             >
-                                <span className="text-gray-700 group-hover:text-red-600 transition-colors duration-200">Who We Help</span>
+                                <span className="text-text-primary group-hover:text-primary transition-colors duration-200">Who We Help</span>
                                 <svg 
-                                    className={`w-4 h-4 text-gray-500 group-hover:text-red-600 transition-all duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
+                                    className={`w-4 h-4 text-text-secondary group-hover:text-primary transition-all duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
                                     fill="none" 
                                     stroke="currentColor" 
                                     viewBox="0 0 24 24"
@@ -151,20 +151,20 @@ export default function Navbar() {
                                                 <Link 
                                                     key={index}
                                                     href={item.href} 
-                                                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gradient-to-r hover:from-red-50 hover:to-indigo-50 transition-all duration-200 group cursor-pointer border border-transparent hover:border-red-100"
+                                                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all duration-200 group cursor-pointer border border-transparent hover:border-primary/20"
                                                 >
                                                     <div className="text-2xl group-hover:scale-110 transition-transform duration-200">
                                                         {item.icon}
                                                     </div>
                                                     <div className="flex-1">
-                                                        <div className="font-semibold text-gray-800 group-hover:text-red-600 transition-colors duration-200">
+                                                        <div className="font-semibold text-text-primary group-hover:text-primary transition-colors duration-200">
                                                             {item.title}
                                                         </div>
-                                                        <div className="text-sm text-gray-600 mt-1 group-hover:text-gray-700 transition-colors duration-200">
+                                                        <div className="text-sm text-text-secondary mt-1 group-hover:text-text-primary transition-colors duration-200">
                                                             {item.description}
                                                         </div>
                                                     </div>
-                                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-red-500 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-4 h-4 text-text-secondary group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                     </svg>
                                                 </Link>
@@ -175,30 +175,30 @@ export default function Navbar() {
                             )}
                         </div>
 
-                        <Link href="/pricing" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/pricing" className="text-text-primary hover:text-primary transition-colors duration-200">
                             Pricing
                         </Link>
 
-                        <Link href="/blog" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/blog" className="text-text-primary hover:text-primary transition-colors duration-200">
                             Blog
                         </Link>
 
-                        <Link href="/integrations" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/integrations" className="text-text-primary hover:text-primary transition-colors duration-200">
                             Integrations
                         </Link>
 
-                        <Link href="/about" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/about" className="text-text-primary hover:text-primary transition-colors duration-200">
                             About
                         </Link>
 
-                        <Link href="/contact" className="text-gray-700 hover:text-red-600 transition-colors duration-200">
+                        <Link href="/contact" className="text-text-primary hover:text-primary transition-colors duration-200">
                             Contact
                         </Link>
                     </div>
 
                     {/* Desktop Sign Up Button */}
                     <div className="hidden lg:flex items-center">
-                        <button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary hover:to-secondary text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                             Sign Up
                         </button>
                     </div>
@@ -210,7 +210,7 @@ export default function Navbar() {
                             className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none"
                             aria-label="Toggle mobile menu"
                         >
-                            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 {mobileMenuOpen ? (
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                 ) : (
@@ -233,7 +233,7 @@ export default function Navbar() {
                     <div className="px-4 py-6 space-y-4">
                         {/* Mobile Navigation Items */}
                         <div className="space-y-3">
-                            <Link href="/features" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/features" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 Features
                             </Link>
                             
@@ -241,11 +241,11 @@ export default function Navbar() {
                             <div className="space-y-2">
                                 <button
                                     onClick={() => setWhoWeHelpOpen(!whoWeHelpOpen)}
-                                    className="flex items-center justify-between w-full text-left text-gray-700 font-medium py-2 focus:outline-none"
+                                    className="flex items-center justify-between w-full text-left text-text-primary font-medium py-2 focus:outline-none"
                                 >
                                     Who We Help
                                     <svg 
-                                        className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
+                                        className={`w-4 h-4 text-text-secondary transition-transform duration-200 ${whoWeHelpOpen ? 'rotate-180' : ''}`} 
                                         fill="none" 
                                         stroke="currentColor" 
                                         viewBox="0 0 24 24"
@@ -265,8 +265,8 @@ export default function Navbar() {
                                             >
                                                 <span className="text-xl">{item.icon}</span>
                                                 <div>
-                                                    <div className="font-medium text-gray-800">{item.title}</div>
-                                                    <div className="text-sm text-gray-600">{item.description}</div>
+                                                    <div className="font-medium text-text-primary">{item.title}</div>
+                                                    <div className="text-sm text-text-secondary">{item.description}</div>
                                                 </div>
                                             </Link>
                                         ))}
@@ -274,26 +274,26 @@ export default function Navbar() {
                                 )}
                             </div>
                             
-                            <Link href="/pricing" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/pricing" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 Pricing
                             </Link>
-                            <Link href="/blog" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/blog" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 Blog
                             </Link>
-                            <Link href="/integrations" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/integrations" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 Integrations
                             </Link>
-                            <Link href="/about" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/about" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 About
                             </Link>
-                            <Link href="/contact" className="block text-gray-700 font-medium py-2 hover:text-red-600 transition-colors duration-200">
+                            <Link href="/contact" className="block text-text-primary font-medium py-2 hover:text-primary transition-colors duration-200">
                                 Contact
                             </Link>
                         </div>
                         
                         {/* Mobile Sign Up Button */}
                         <div className="pt-4 border-t border-gray-200">
-                            <button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg">
+                            <button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary hover:to-secondary text-white py-3 px-6 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg">
                                 Sign Up
                             </button>
                         </div>

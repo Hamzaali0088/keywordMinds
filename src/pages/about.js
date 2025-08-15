@@ -102,28 +102,28 @@ export default function About() {
   const getColorClasses = (color) => {
     const colorMap = {
       blue: {
-        bg: 'bg-blue-50',
-        icon: 'bg-blue-500',
-        text: 'text-blue-600',
-        border: 'border-blue-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       green: {
-        bg: 'bg-green-50',
-        icon: 'bg-green-500',
-        text: 'text-green-600',
-        border: 'border-green-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       },
       red: {
-        bg: 'bg-red-50',
-        icon: 'bg-red-500',
-        text: 'text-red-600',
-        border: 'border-red-200'
+        bg: 'bg-primary/10',
+        icon: 'bg-primary',
+        text: 'text-primary',
+        border: 'border-primary/20'
       },
       purple: {
-        bg: 'bg-purple-50',
-        icon: 'bg-purple-500',
-        text: 'text-purple-600',
-        border: 'border-purple-200'
+        bg: 'bg-secondary/10',
+        icon: 'bg-secondary',
+        text: 'text-secondary',
+        border: 'border-secondary/20'
       }
     }
     return colorMap[color] || colorMap.blue
@@ -134,16 +134,16 @@ export default function About() {
       <Navbar />
       
       {/* Hero Section */}
-      <FullContainer className="bg-gradient-to-br from-gray-50 to-gray-100">
+      <FullContainer className="bg-gradient-to-br from-background-light to-text-secondary/10">
         <Container>
           <div className="pt-20 md:pt-32 pb-16 text-center">
-            <div className="inline-block bg-red-200 text-red-800 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+            <div className="inline-block bg-primary/20 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
               About KeywordMinds
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight">
               We built KeywordMinds to make rank tracking transparent and reliable
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Since 2011, we've been helping SEO agencies track keywords with unprecedented accuracy. 
               Our mission is simple: give you the data you need to win rankings and grow your business.
             </p>
@@ -156,33 +156,33 @@ export default function About() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-text-secondary leading-relaxed">
                 We believe that every SEO agency deserves access to accurate, reliable rank tracking data. 
                 Too many tools provide inconsistent results, leaving agencies guessing about their performance.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-text-secondary leading-relaxed">
                 That's why we built KeywordMinds with 3rd party verification, real-time updates, and 
                 transparent reporting. We're not just another rank tracker - we're your partner in SEO success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                <button className="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                   Start Free Trial
                 </button>
-                <button className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-gray-50">
+                <button className="border-2 border-secondary text-secondary font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-primary hover:text-white">
                   Book Demo
                 </button>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-red-500 to-red-600 p-8 rounded-2xl text-white">
+              <div className="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white">
                 <div className="text-4xl font-bold mb-4">10,000+</div>
                 <div className="text-xl mb-2">Agencies Trust Us</div>
-                <div className="text-red-100">With their keyword tracking needs</div>
+                <div className="text-white/80">With their keyword tracking needs</div>
               </div>
-              <div className="absolute -top-4 -right-4 bg-blue-500 p-6 rounded-xl text-white">
+              <div className="absolute -top-4 -right-4 bg-secondary p-6 rounded-xl text-white">
                 <div className="text-2xl font-bold mb-2">99.9%</div>
                 <div className="text-sm">Uptime</div>
               </div>
@@ -192,13 +192,13 @@ export default function About() {
       </FullContainer>
 
       {/* Team Section */}
-      <FullContainer className="bg-gray-50 py-20">
+      <FullContainer className="bg-background-light py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
               The passionate people behind KeywordMinds who are dedicated to making your SEO campaigns successful.
             </p>
           </div>
@@ -214,18 +214,18 @@ export default function About() {
                   animationFillMode: 'both'
                 }}
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-white font-bold text-xl">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 text-center mb-2">
+                <h3 className="text-xl font-bold text-text-primary text-center mb-2">
                   {member.name}
                 </h3>
-                <p className="text-red-600 font-semibold text-center mb-4">
+                <p className="text-primary font-semibold text-center mb-4">
                   {member.role}
                 </p>
-                <p className="text-gray-600 text-sm text-center leading-relaxed">
+                <p className="text-text-secondary text-sm text-center leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -238,17 +238,17 @@ export default function About() {
       <FullContainer className="bg-white py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
               From a simple idea to serving thousands of agencies worldwide.
             </p>
           </div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-200 hidden lg:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-text-secondary/20 hidden lg:block"></div>
             
             <div className="space-y-12">
               {timeline.map((item, index) => {
@@ -268,21 +268,21 @@ export default function About() {
                     }}
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg hidden lg:block"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg hidden lg:block"></div>
                     
                     {/* Content */}
                     <div className={`lg:w-1/2 ${isEven ? 'lg:text-right' : 'lg:text-left'} text-center lg:text-left`}>
-                      <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                      <div className="bg-background-light rounded-xl p-6 hover:shadow-lg transition-all duration-300">
                         <div className="flex items-center justify-center lg:justify-start mb-4">
-                          <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mr-4">
+                          <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
                             <IconComponent className="w-6 h-6 text-white" />
                           </div>
-                          <div className="text-2xl font-bold text-red-600">{item.year}</div>
+                          <div className="text-2xl font-bold text-primary">{item.year}</div>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-xl font-bold text-text-primary mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-text-secondary leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -296,13 +296,13 @@ export default function About() {
       </FullContainer>
 
       {/* Values Section */}
-      <FullContainer className="bg-gray-50 py-20">
+      <FullContainer className="bg-background-light py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
               The principles that guide everything we do and every decision we make.
             </p>
           </div>
@@ -328,7 +328,7 @@ export default function About() {
                   <h3 className={`text-2xl font-bold ${colors.text} mb-4 group-hover:scale-105 transition-transform duration-300`}>
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-text-secondary leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -339,24 +339,24 @@ export default function About() {
       </FullContainer>
 
       {/* CTA Section */}
-      <FullContainer className="bg-gradient-to-r from-red-600 to-red-700 py-20">
+      <FullContainer className="bg-gradient-to-r from-primary to-secondary py-20">
         <Container>
           <div className="text-center text-white">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Transform Your SEO?
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
               Join thousands of agencies who trust KeywordMinds for accurate, reliable rank tracking.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-red-600 font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-gray-100 transform hover:scale-105">
+              <button className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-background-light transform hover:scale-105">
                 Start Free Trial
               </button>
-              <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-white hover:text-red-600 transform hover:scale-105">
+              <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-white hover:text-primary transform hover:scale-105">
                 Schedule Demo
               </button>
             </div>
-            <p className="text-sm opacity-75 mt-4">No credit card required • 14-day free trial</p>
+            <p className="text-sm text-white/60 mt-4">No credit card required • 14-day free trial</p>
           </div>
         </Container>
       </FullContainer>
@@ -369,7 +369,7 @@ export default function About() {
             opacity: 0;
             transform: translateY(30px);
           }
-          100% {
+          100% { 
             opacity: 1;
             transform: translateY(0);
           }
