@@ -15,7 +15,12 @@ import {
   CheckCircle,
   ArrowRight,
   Play,
-  Search
+  Search,
+  ChevronRight,
+  Star,
+  TrendingUp,
+  List,
+  Image
 } from 'lucide-react'
 
 export default function Integrations() {
@@ -172,244 +177,227 @@ export default function Integrations() {
               Integrations
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight">
-              Connect Your Workflow
+              Supported Integrations
             </h1>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Seamlessly integrate KeywordMinds with your favorite tools and platforms. 
-              From Google Analytics to custom APIs, we've got you covered.
+              Connect KeywordMinds with your favorite tools and platforms. 
+              From Google tools to BI dashboards, we've got you covered.
             </p>
           </div>
         </Container>
       </FullContainer>
 
-      {/* Integration Categories */}
-      <FullContainer className="bg-white py-20">
-        <Container>
-          {integrations.map((category, categoryIndex) => (
-            <div key={category.category} className="mb-20">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                  {category.category}
-                </h2>
-                <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-                  {category.category === "Google Tools" && "Integrate with Google's ecosystem for comprehensive analytics"}
-                  {category.category === "BI Dashboards" && "Connect to leading business intelligence platforms"}
-                  {category.category === "APIs & Development" && "Build custom integrations with our developer tools"}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {category.integrations.map((integration, index) => {
-                  const colors = getColorClasses(integration.color)
-                  const IconComponent = integration.icon
-                  
-                  return (
-                    <div
-                      key={integration.name}
-                      className={`group relative p-6 rounded-2xl border-2 ${colors.border} ${colors.bg} hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
-                      style={{
-                        animation: 'fadeInUp 0.6s ease-out',
-                        animationDelay: `${(categoryIndex * 3 + index) * 0.1}s`,
-                        animationFillMode: 'both'
-                      }}
-                    >
-                      {/* Screenshot Placeholder */}
-                      <div className="h-32 bg-gradient-to-br from-background-light to-text-secondary/20 rounded-xl mb-6 flex items-center justify-center">
-                        <div className="text-text-secondary text-center">
-                          <IconComponent className="w-8 h-8 mx-auto mb-2" />
-                          <span className="text-xs">Integration Screenshot</span>
-                        </div>
-                      </div>
-
-                      {/* Header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className={`w-12 h-12 ${colors.icon} rounded-lg flex items-center justify-center`}>
-                          <IconComponent className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                          {integration.status}
-                        </span>
-                      </div>
-
-                      {/* Content */}
-                      <h3 className={`text-xl font-bold ${colors.text} mb-3 group-hover:scale-105 transition-transform duration-300`}>
-                        {integration.name}
-                      </h3>
-                      <p className="text-text-secondary mb-4 leading-relaxed">
-                        {integration.description}
-                      </p>
-
-                      {/* Benefits */}
-                      <div className="space-y-2 mb-6">
-                        {integration.benefits.map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-sm text-text-primary">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Action */}
-                      <div className="flex items-center justify-between">
-                        <button className="flex items-center space-x-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-200">
-                          <span>Learn More</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </button>
-                        <button className="flex items-center space-x-2 bg-white text-text-secondary px-3 py-2 rounded-lg text-sm font-medium hover:bg-background-light transition-colors duration-200 border border-text-secondary/20">
-                          <Play className="w-4 h-4" />
-                          <span>Demo</span>
-                        </button>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
-        </Container>
-      </FullContainer>
-
-      {/* API Documentation Section */}
-      <FullContainer className="bg-background-light py-20">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary">
-                Developer-Friendly API
-              </h2>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                Build custom integrations with our comprehensive REST API. Access real-time rank tracking data, 
-                set up webhooks, and automate your SEO workflows.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-text-primary">RESTful API with JSON responses</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-text-primary">Comprehensive documentation</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-text-primary">SDKs for popular languages</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-text-primary">Webhook support for real-time updates</span>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
-                  View API Docs
-                </button>
-                <button className="border-2 border-secondary text-secondary font-semibold py-3 px-6 rounded-lg transition-colors duration-200 hover:bg-primary hover:text-white">
-                  Get API Key
-                </button>
-              </div>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-lg border border-text-secondary/20">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-text-primary">API Example</h3>
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                </div>
-              </div>
-              <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                <div>GET /api/v1/rankings</div>
-                <div className="text-gray-400 mt-2">// Get keyword rankings</div>
-                <div className="mt-2">
-                  <div>{"{"}</div>
-                  <div className="ml-4">"keyword": "seo tools",</div>
-                  <div className="ml-4">"domain": "keywordminds.com",</div>
-                  <div className="ml-4">"position": 3,</div>
-                  <div className="ml-4">"change": +2</div>
-                  <div>{"}"}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </FullContainer>
-
-      {/* Integration Benefits */}
+      {/* SECTION 1: List Supported Integrations */}
       <FullContainer className="bg-white py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
-              Why Integrate?
+            <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
+              <List className="w-4 h-4" />
+              <span className="text-sm font-semibold">Available Integrations</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              Connect with Your Favorite Tools
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Connect your rank tracking data with your existing tools to create powerful, automated workflows.
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+              Seamlessly integrate KeywordMinds with the tools you already use
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-text-primary mb-2">Save Time</h3>
-              <p className="text-text-secondary">Automate data collection and reporting across all your tools</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {integrations.map((category, categoryIndex) => (
+              <div
+                key={category.category}
+                className="bg-background-light p-8 rounded-2xl border border-text-secondary/20 hover:shadow-lg transition-all duration-300"
+                style={{
+                  animation: 'fadeInUp 0.6s ease-out',
+                  animationDelay: `${categoryIndex * 0.2}s`,
+                  animationFillMode: 'both'
+                }}
+              >
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    {category.category === "Google Tools" && <Search className="w-8 h-8 text-primary" />}
+                    {category.category === "BI Dashboards" && <BarChart3 className="w-8 h-8 text-primary" />}
+                    {category.category === "APIs & Development" && <Database className="w-8 h-8 text-primary" />}
+                  </div>
+                  <h3 className="text-2xl font-bold text-text-primary mb-2">{category.category}</h3>
+                  <p className="text-text-secondary">
+                    {category.integrations.length} integrations available
+                  </p>
+                </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-secondary" />
+                <div className="space-y-3">
+                  {category.integrations.map((integration, index) => (
+                    <div key={integration.name} className="flex items-center space-x-3 p-3 bg-white rounded-lg">
+                      <div className={`w-8 h-8 ${getColorClasses(integration.color).icon} rounded-lg flex items-center justify-center`}>
+                        <integration.icon className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-text-primary">{integration.name}</h4>
+                        <p className="text-xs text-text-secondary">{integration.status}</p>
+                      </div>
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-text-primary mb-2">Better Insights</h3>
-              <p className="text-text-secondary">Combine data from multiple sources for comprehensive analysis</p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-text-primary mb-2">Team Collaboration</h3>
-              <p className="text-text-secondary">Share data seamlessly across your entire team</p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-secondary" />
-              </div>
-              <h3 className="text-xl font-bold text-text-primary mb-2">Data Security</h3>
-              <p className="text-text-secondary">Enterprise-grade security for all your integrations</p>
-            </div>
+            ))}
           </div>
         </Container>
       </FullContainer>
 
-      {/* CTA Section */}
-      <FullContainer className="bg-gradient-to-r from-primary to-secondary py-20">
+      {/* SECTION 2: Screenshots & Benefits for Each */}
+      <FullContainer className="bg-background-light py-20">
         <Container>
-          <div className="text-center text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Integrate?
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
-              Start connecting your tools today and unlock the full potential of your rank tracking data.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-background-light transform hover:scale-105">
-                Start Free Trial
-              </button>
-              <button className="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-white hover:text-primary transform hover:scale-105">
-                Contact Sales
-              </button>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full mb-4">
+              <Image className="w-4 h-4" />
+              <span className="text-sm font-semibold">See How It Works</span>
             </div>
-            <p className="text-sm text-white/60 mt-4">All integrations included in your plan</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              Explore Each Integration
+            </h2>
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+              Discover how each integration works and what benefits it brings to your workflow
+            </p>
           </div>
+
+          {integrations.map((category, categoryIndex) => (
+            <div key={category.category} className="mb-16">
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+                  {category.category}
+                </h3>
+                <div className="w-24 h-1 bg-primary mx-auto"></div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                {/* Table Header */}
+                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                  <div className="grid grid-cols-12 gap-4 items-center">
+                    <div className="col-span-3">
+                      <h4 className="font-semibold text-gray-900">Integration</h4>
+                    </div>
+                    <div className="col-span-4">
+                      <h4 className="font-semibold text-gray-900">Description</h4>
+                    </div>
+                    <div className="col-span-3">
+                      <h4 className="font-semibold text-gray-900">Key Benefits</h4>
+                    </div>
+                    <div className="col-span-2">
+                      <h4 className="font-semibold text-gray-900">Actions</h4>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Table Rows */}
+                <div className="divide-y divide-gray-200">
+                  {category.integrations.map((integration, index) => {
+                    const colors = getColorClasses(integration.color)
+                    const IconComponent = integration.icon
+                    
+                    return (
+                      <div
+                        key={integration.name}
+                        className={`px-6 py-6 hover:bg-gray-50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-25'}`}
+                        style={{
+                          animation: 'fadeInUp 0.6s ease-out',
+                          animationDelay: `${(categoryIndex * 3 + index) * 0.1}s`,
+                          animationFillMode: 'both'
+                        }}
+                      >
+                        <div className="grid grid-cols-12 gap-4 items-center">
+                          {/* Integration Column */}
+                          <div className="col-span-3">
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-10 h-10 ${colors.icon} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                                <IconComponent className="w-5 h-5 text-white" />
+                              </div>
+                              <div>
+                                <h5 className={`font-semibold ${colors.text} text-sm`}>
+                                  {integration.name}
+                                </h5>
+                                <span className="bg-green-50 text-green-700 px-2 py-1 rounded text-xs font-medium">
+                                  {integration.status}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Description Column */}
+                          <div className="col-span-4">
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                              {integration.description}
+                            </p>
+                          </div>
+
+                          {/* Benefits Column */}
+                          <div className="col-span-3">
+                            <div className="space-y-1">
+                              {integration.benefits.slice(0, 2).map((benefit, benefitIndex) => (
+                                <div key={benefitIndex} className="flex items-center space-x-2 text-xs">
+                                  <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                                  <span className="text-gray-700">{benefit}</span>
+                                </div>
+                              ))}
+                              {integration.benefits.length > 2 && (
+                                <div className="text-xs text-gray-500">
+                                  +{integration.benefits.length - 2} more benefits
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Actions Column */}
+                          <div className="col-span-2">
+                            <div className="flex flex-col space-y-2">
+                              <button className="bg-primary text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-secondary transition-colors duration-200">
+                                Learn More
+                              </button>
+                              <button className="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs font-medium hover:bg-gray-50 transition-colors duration-200">
+                                Demo
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Expanded Details (Hidden by default, can be toggled) */}
+                        <div className="mt-4 pt-4 border-t border-gray-100">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {/* Screenshot Preview */}
+                            <div>
+                              <h6 className="font-medium text-gray-900 text-sm mb-2">Preview</h6>
+                              <div className="bg-gray-50 rounded border border-gray-200 p-4">
+                                <div className="flex items-center justify-center h-20">
+                                  <div className="text-center text-gray-500">
+                                    <IconComponent className="w-8 h-8 mx-auto mb-1" />
+                                    <span className="text-xs">{integration.name}</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* All Benefits */}
+                            <div>
+                              <h6 className="font-medium text-gray-900 text-sm mb-2">All Benefits</h6>
+                              <div className="space-y-1">
+                                {integration.benefits.map((benefit, benefitIndex) => (
+                                  <div key={benefitIndex} className="flex items-center space-x-2 text-xs">
+                                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                    <span className="text-gray-700">{benefit}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          ))}
         </Container>
       </FullContainer>
 
@@ -424,6 +412,16 @@ export default function Integrations() {
           100% {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        @keyframes slideInFromSide {
+          0% {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
           }
         }
       `}</style>

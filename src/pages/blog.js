@@ -233,11 +233,11 @@ export default function Blog() {
           </div>
 
           {/* Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPosts.map((post, index) => (
               <div
                 key={post.id}
-                className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-text-secondary/20"
+                className="group bg-white rounded-xl overflow-hidden  shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-text-secondary/20"
                 style={{
                   animation: 'fadeInUp 0.6s ease-out',
                   animationDelay: `${index * 0.1}s`,
@@ -289,7 +289,7 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-white"
+                className="flex-1 px-4 py-3 rounded-lg border border-secondary/90 text-text-primary focus:outline-none focus:ring-2 focus:ring-white"
               />
               <button className="bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-background-light transition-colors duration-200">
                 Subscribe
