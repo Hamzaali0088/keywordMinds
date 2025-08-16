@@ -26,29 +26,29 @@ import {
 export default function Integrations() {
   const integrations = [
     {
-      category: "Google Tools",
+      category: "Google SEO Tools",
       integrations: [
         {
-          name: "Google Analytics",
-          description: "Connect your rank tracking data with Google Analytics for comprehensive performance insights.",
-          benefits: ["Track organic traffic correlation", "Monitor conversion rates", "Analyze user behavior"],
-          status: "Available",
-          icon: BarChart3,
-          color: "blue",
-          screenshot: "/st-images/integrations/google-analytics.jpg"
-        },
-        {
           name: "Google Search Console",
-          description: "Import and sync your Search Console data to get a complete picture of your SEO performance.",
-          benefits: ["Import existing keywords", "Compare data sources", "Enhanced reporting"],
+          description: "Import and sync your Search Console data to get a complete picture of your SEO performance and keyword rankings.",
+          benefits: ["Import existing keywords", "Compare GSC vs rank tracking data", "Enhanced reporting"],
           status: "Available",
           icon: Search,
-          color: "green",
+          color: "blue",
           screenshot: "/st-images/integrations/search-console.jpg"
         },
         {
+          name: "Google Analytics",
+          description: "Connect your rank tracking data with Google Analytics for comprehensive performance insights and traffic correlation.",
+          benefits: ["Track organic traffic correlation", "Monitor conversion rates", "Analyze user behavior"],
+          status: "Available",
+          icon: BarChart3,
+          color: "green",
+          screenshot: "/st-images/integrations/google-analytics.jpg"
+        },
+        {
           name: "Google Looker Studio",
-          description: "Create stunning, interactive dashboards with your rank tracking data in Looker Studio.",
+          description: "Create stunning, interactive dashboards with your rank tracking data for client presentations and reporting.",
           benefits: ["Custom dashboards", "Real-time data", "Client presentations"],
           status: "Available",
           icon: BarChart3,
@@ -58,61 +58,61 @@ export default function Integrations() {
       ]
     },
     {
-      category: "BI Dashboards",
+      category: "SEO & Reporting Platforms",
       integrations: [
         {
-          name: "DashThis",
-          description: "Automatically sync your rank tracking data to DashThis for comprehensive client reporting.",
-          benefits: ["Automated reporting", "White-label dashboards", "Scheduled reports"],
+          name: "Ahrefs",
+          description: "Sync your KeywordMinds rank tracking data with Ahrefs for comprehensive SEO analysis and competitor insights.",
+          benefits: ["Competitor analysis", "Keyword research", "Backlink monitoring"],
           status: "Available",
           icon: BarChart3,
           color: "orange",
-          screenshot: "/st-images/integrations/dashthis.jpg"
+          screenshot: "/st-images/integrations/ahrefs.jpg"
         },
         {
-          name: "Tableau",
-          description: "Connect your rank tracking data to Tableau for advanced analytics and visualization.",
-          benefits: ["Advanced analytics", "Custom visualizations", "Data exploration"],
+          name: "Semrush",
+          description: "Integrate rank tracking data with Semrush for enhanced keyword research and competitive intelligence.",
+          benefits: ["Keyword research", "Competitive analysis", "Position tracking"],
           status: "Available",
           icon: BarChart3,
           color: "blue",
-          screenshot: "/st-images/integrations/tableau.jpg"
+          screenshot: "/st-images/integrations/semrush.jpg"
         },
         {
-          name: "Power BI",
-          description: "Integrate with Microsoft Power BI for enterprise-level reporting and analytics.",
-          benefits: ["Enterprise reporting", "Microsoft ecosystem", "Advanced filtering"],
+          name: "Moz Pro",
+          description: "Connect with Moz Pro for comprehensive SEO metrics and domain authority tracking alongside your rankings.",
+          benefits: ["Domain authority", "Page optimization", "Local SEO"],
           status: "Available",
           icon: BarChart3,
           color: "yellow",
-          screenshot: "/st-images/integrations/power-bi.jpg"
+          screenshot: "/st-images/integrations/moz.jpg"
         }
       ]
     },
     {
-      category: "APIs & Development",
+      category: "Agency & Client Tools",
       integrations: [
         {
-          name: "REST API",
-          description: "Access your rank tracking data programmatically with our comprehensive REST API.",
-          benefits: ["Real-time data access", "Custom integrations", "Automated workflows"],
+          name: "Agency Analytics",
+          description: "Automatically sync your rank tracking data to Agency Analytics for comprehensive client reporting and white-label dashboards.",
+          benefits: ["White-label reports", "Client portals", "Automated reporting"],
           status: "Available",
           icon: Database,
           color: "red",
-          screenshot: "/st-images/integrations/api.jpg"
+          screenshot: "/st-images/integrations/agency-analytics.jpg"
         },
         {
-          name: "Webhooks",
-          description: "Receive instant notifications when rankings change with configurable webhooks.",
-          benefits: ["Instant alerts", "Custom triggers", "Automated actions"],
+          name: "Raven Tools",
+          description: "Integrate with Raven Tools for comprehensive SEO management and client reporting capabilities.",
+          benefits: ["SEO management", "Client reporting", "Project tracking"],
           status: "Available",
           icon: Zap,
           color: "green",
-          screenshot: "/st-images/integrations/webhooks.jpg"
+          screenshot: "/st-images/integrations/raven-tools.jpg"
         },
         {
           name: "Zapier",
-          description: "Connect KeywordMinds to 5000+ apps through Zapier for seamless automation.",
+          description: "Connect KeywordMinds to 5000+ apps through Zapier for seamless automation and workflow integration.",
           benefits: ["5000+ app connections", "No-code automation", "Custom workflows"],
           status: "Available",
           icon: Zap,
@@ -216,9 +216,9 @@ export default function Integrations() {
               >
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    {category.category === "Google Tools" && <Search className="w-8 h-8 text-primary" />}
-                    {category.category === "BI Dashboards" && <BarChart3 className="w-8 h-8 text-primary" />}
-                    {category.category === "APIs & Development" && <Database className="w-8 h-8 text-primary" />}
+                    {category.category === "Google SEO Tools" && <Search className="w-8 h-8 text-primary" />}
+                    {category.category === "SEO & Reporting Platforms" && <BarChart3 className="w-8 h-8 text-primary" />}
+                    {category.category === "Agency & Client Tools" && <Database className="w-8 h-8 text-primary" />}
                   </div>
                   <h3 className="text-2xl font-bold text-text-primary mb-2">{category.category}</h3>
                   <p className="text-text-secondary">
