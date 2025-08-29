@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Container from './Container'
 import { Twitter, Linkedin, Facebook, Instagram, Youtube } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer() {
     return (
@@ -17,9 +18,9 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-black/20"></div>
 
                 {/* Blue gradient overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#08112D]  to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#08112D]  to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#08112D]  to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-[#08112D]  via-[#08112D] to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#08112D]  via-[#08112D] to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#08112D]  via-[#08112D] to-transparent"></div>
             </div>
 
             {/* CTA Banner */}
@@ -51,12 +52,10 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Column 1: Brand */}
                         <div className="space-y-4">
-                            <div className="flex items-center space-x-2">
-                                <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded flex items-center justify-center">
-                                    <span className="text-white font-bold text-sm">K</span>
-                                </div>
-                                <span className="text-white font-semibold text-lg">keyword.com</span>
-                            </div>
+                            <Link href="/" className="flex items-center space-x-2">
+                                <Image src="/st-images/logo.png" alt="Logo" width={32} height={32} />
+                                <span className="text-white font-bold">keyword minds</span>
+                            </Link>
                             <p className="text-gray-400 text-sm leading-relaxed">
                                 The most accurate keyword rank tracking tool for SEO agencies and professionals.
                             </p>

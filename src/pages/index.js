@@ -20,7 +20,7 @@ export default function Home() {
       <LogosSlider />
       <Testimonial />
       <Growth />
-      <KeywordInsightHub />
+      {/* <KeywordInsightHub /> */}
       <FinalCTA />
       <Footer />
     </>

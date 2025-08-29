@@ -42,9 +42,9 @@ const reportTypesData = [
 
 export default function WhiteLabelReports() {
   return (
-    <FullContainer className="py-20 bg-gradient-to-br from-background-light to-gray-100">
+    <FullContainer className="py-16 bg-gradient-to-br from-background-light to-gray-100">
       <Container>
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-block bg-primary/20 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
             White-Label Reports
           </div>
@@ -56,165 +56,137 @@ export default function WhiteLabelReports() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Report Types */}
+        {/* Modern Horizontal Cards Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {reportTypesData.map((card) => {
             const IconComponent = card.icon;
             return (
-              <div key={card.id} className="bg-white p-8 rounded-2xl shadow-xl border border-text-secondary/20 transform transition-all duration-300 hover:bg-gradient-to-br hover:from-primary hover:to-secondary hover:border-primary/20 group cursor-pointer">
-                <div className="w-16 h-16 bg-background-light rounded-xl flex items-center justify-center mb-6 group-hover:bg-white group-hover:bg-opacity-20 transition-all duration-300">
-                  <IconComponent className="w-8 h-8 text-text-secondary group-hover:text-white transition-colors duration-300" />
+              <div key={card.id} className="group relative bg-white p-6 rounded-2xl shadow-lg border border-text-secondary/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mr-4">
+                      <IconComponent className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-text-primary group-hover:text-white transition-colors duration-300">{card.title}</h3>
+                  </div>
+                  <p className="text-sm text-text-secondary group-hover:text-white/90 mb-4 transition-colors duration-300 line-clamp-2">{card.description}</p>
+                  <div className="text-xs text-text-secondary/70 group-hover:text-white/70 transition-colors duration-300">
+                    {card.features.length} features included
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold group-hover:text-white mb-4 transition-colors duration-300">{card.title}</h3>
-                <p className=" group-hover:text-white mb-6 transition-colors duration-300">{card.description}</p>
-                <ul className="space-y-2 text-sm group-hover:text-white transition-colors duration-300">
-                  {card.features.map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-text-secondary/40 group-hover:bg-white group-hover:text-white rounded-full transition-colors duration-300"></div>
-                      <span className="group-hover:text-white/80 transition-colors duration-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             );
           })}
         </div>
 
-        {/* Report Preview */}
-        <div className="bg-white p-8 rounded-2xl shadow-2xl border border-text-secondary/20 mb-16">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold text-text-primary">Sample White-Label Report</h3>
+        {/* Compact Report Dashboard */}
+        <div className="bg-gradient-to-br from-white to-background-light p-6 rounded-3xl shadow-xl border border-text-secondary/10 mb-16">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-text-primary">Live Report Preview</h3>
+                <p className="text-sm text-text-secondary">Real-time client dashboard</p>
+              </div>
+            </div>
             <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <div className="w-3 h-3 bg-secondary rounded-full"></div>
-              <div className="w-3 h-3 bg-text-secondary rounded-full"></div>
+              <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+              <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-3 h-3 bg-text-secondary rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Report Header */}
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-primary to-secondary p-6 rounded-xl text-white">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold">Your Agency Name</h4>
-                      <p className="text-white/80">SEO Performance Report</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold">Dec 2024</div>
-                    <div className="text-white/80 text-sm">Monthly Report</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Key Metrics */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-background-light p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-primary">+15%</div>
-                  <div className="text-sm text-text-secondary">Traffic Growth</div>
-                </div>
-                <div className="bg-background-light p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-secondary">#3</div>
-                  <div className="text-sm text-text-secondary">Avg Position</div>
-                </div>
-                <div className="bg-background-light p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-primary">247</div>
-                  <div className="text-sm text-text-secondary">Keywords</div>
-                </div>
-                <div className="bg-background-light p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-secondary">89%</div>
-                  <div className="text-sm text-text-secondary">Visibility</div>
-                </div>
-              </div>
+          {/* Horizontal Stats Layout */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div className="bg-white p-4 rounded-xl border border-primary/20 text-center">
+              <div className="text-2xl font-bold text-primary mb-1">+15%</div>
+              <div className="text-xs text-text-secondary">Traffic Growth</div>
             </div>
+            <div className="bg-white p-4 rounded-xl border border-secondary/20 text-center">
+              <div className="text-2xl font-bold text-secondary mb-1">#3</div>
+              <div className="text-xs text-text-secondary">Avg Position</div>
+            </div>
+            <div className="bg-white p-4 rounded-xl border border-primary/20 text-center">
+              <div className="text-2xl font-bold text-primary mb-1">247</div>
+              <div className="text-xs text-text-secondary">Keywords</div>
+            </div>
+            <div className="bg-white p-4 rounded-xl border border-secondary/20 text-center">
+              <div className="text-2xl font-bold text-secondary mb-1">89%</div>
+              <div className="text-xs text-text-secondary">Visibility</div>
+            </div>
+          </div>
 
-            {/* Report Content */}
-            <div className="space-y-6">
-              <div className="bg-background-light p-6 rounded-xl">
-                <h4 className="text-lg font-semibold text-text-primary mb-4">Top Performing Keywords</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                    <span className="text-sm text-text-primary">"SEO tools"</span>
-                    <span className="text-sm font-bold text-primary">#1</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                    <span className="text-sm text-text-primary">"Keyword tracker"</span>
-                    <span className="text-sm font-bold text-secondary">#2</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-white rounded-lg">
-                    <span className="text-sm text-text-primary">"Rank monitoring"</span>
-                    <span className="text-sm font-bold text-text-secondary">#5</span>
-                  </div>
+          {/* Quick Insights Row */}
+          <div className="bg-white p-4 rounded-xl border border-text-secondary/10">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-text-primary">Agency Dashboard</h4>
+                  <p className="text-xs text-text-secondary">Customizable branding & metrics</p>
                 </div>
               </div>
-
-              <div className="bg-background-light p-6 rounded-xl">
-                <h4 className="text-lg font-semibold text-text-primary mb-4">Recent Improvements</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm text-text-secondary">"SEO software" moved from #8 to #3</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                    <span className="text-sm text-text-secondary">"Rank tracker" improved to #2</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-text-secondary rounded-full"></div>
-                    <span className="text-sm text-text-secondary">15 new keywords in top 10</span>
-                  </div>
-                </div>
+              <div className="flex space-x-2">
+                <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-lg font-medium">"SEO tools" #1</span>
+                <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-lg font-medium">89% visibility</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-text-secondary/20">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
-              <FileText className="w-6 h-6 text-white" />
+        {/* Compact Features Row */}
+        <div className="bg-white p-6 rounded-2xl shadow-lg border border-text-secondary/20 mb-12">
+          <h3 className="text-xl font-bold text-text-primary mb-6 text-center">Key Features</h3>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                <FileText className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-text-primary mb-1">Templates</h4>
+              <p className="text-xs text-text-secondary">Custom layouts</p>
             </div>
-            <h4 className="font-semibold text-text-primary mb-2">Custom Templates</h4>
-            <p className="text-sm text-text-secondary">Design your own report layouts</p>
-          </div>
 
-          <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-text-secondary/20">
-            <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-6 h-6 text-white" />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-text-primary mb-1">Automation</h4>
+              <p className="text-xs text-text-secondary">Scheduled delivery</p>
             </div>
-            <h4 className="font-semibold text-text-primary mb-2">Scheduled Reports</h4>
-            <p className="text-sm text-text-secondary">Automated delivery to clients</p>
-          </div>
 
-          <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-text-secondary/20">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Heart className="w-6 h-6 text-white" />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Heart className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-text-primary mb-1">Branding</h4>
+              <p className="text-xs text-text-secondary">Full customization</p>
             </div>
-            <h4 className="font-semibold text-text-primary mb-2">Brand Integration</h4>
-            <p className="text-sm text-text-secondary">Your logo, colors & branding</p>
-          </div>
 
-          <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-text-secondary/20">
-            <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Share2 className="w-6 h-6 text-white" />
+            <div className="flex flex-col items-center text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                <Share2 className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-text-primary mb-1">Sharing</h4>
+              <p className="text-xs text-text-secondary">One-click export</p>
             </div>
-            <h4 className="font-semibold text-text-primary mb-2">Easy Sharing</h4>
-            <p className="text-sm text-text-secondary">One-click sharing options</p>
           </div>
         </div>
 
+        {/* Call to Action */}
         <div className="text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+            <button className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
               Create Report
             </button>
-            <button className="border-2 border-secondary text-secondary font-semibold py-3 px-8 rounded-lg transition-colors duration-200 hover:bg-primary hover:text-white">
+            <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300">
               View Templates
             </button>
           </div>

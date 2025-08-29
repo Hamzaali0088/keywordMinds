@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import FullContainer from '../../common/FullContainer'
+import Container from '../../common/Container'
 
 export default function Testimonial() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -67,7 +69,7 @@ export default function Testimonial() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768) // md breakpoint
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -93,20 +95,20 @@ export default function Testimonial() {
   }
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <FullContainer className="relative py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
       <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-secondary/5 to-primary/5 rounded-full blur-3xl"></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <Container className="relative z-10">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16 px-4">
           <div className="inline-flex items-center px-3 md:px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-xs md:text-sm font-medium text-primary mb-4 md:mb-6">
             <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
             Customer Success Stories
           </div>
-          
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 px-2">
             <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
               Trusted by top SEOs
@@ -116,12 +118,12 @@ export default function Testimonial() {
               fighting to rank #1
             </span>
           </h2>
-          
+
           <p className="text-base sm:text-lg md:text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-4">
             Keyword.com is ideal for{' '}
             <span className="text-primary font-semibold">SEO Agencies</span>,{' '}
             <span className="text-primary font-semibold">in-house SEO teams</span> and{' '}
-            <span className="text-primary font-semibold">enterprise solutions</span>. 
+            <span className="text-primary font-semibold">enterprise solutions</span>.
             Our customers love our{' '}
             <span className="text-primary font-semibold">rank tracker dashboards</span>,{' '}
             <span className="text-primary font-semibold">keyword API</span> and{' '}
@@ -135,21 +137,19 @@ export default function Testimonial() {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
-              currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95 hover:border-primary'
-            }`}
+            className={`absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95 hover:border-primary'
+              }`}
           >
             <svg className="w-4 h-4 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          
+
           <button
             onClick={nextSlide}
             disabled={currentSlide === maxSlide}
-            className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${
-              currentSlide === maxSlide ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95 hover:border-primary'
-            }`}
+            className={`absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out ${currentSlide === maxSlide ? 'opacity-50 cursor-not-allowed' : 'hover:scale-110 active:scale-95 hover:border-primary'
+              }`}
           >
             <svg className="w-4 h-4 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -157,9 +157,8 @@ export default function Testimonial() {
           </button>
 
           {/* Testimonials Grid */}
-          <div className={`grid gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12 px-4 sm:px-8 md:px-16 ${
-            isMobile ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-          }`}>
+          <div className={`grid gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12 px-4 sm:px-8 md:px-16 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+            }`}>
             {getVisibleTestimonials().map((testimonial, index) => (
               <div
                 key={currentSlide + index}
@@ -177,7 +176,7 @@ export default function Testimonial() {
                 {/* Quote Icon */}
                 <div className="absolute top-4 md:top-6 right-4 md:right-6 text-primary/20">
                   <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
 
@@ -185,7 +184,7 @@ export default function Testimonial() {
                 <div className="flex items-center mb-4 md:mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
@@ -223,50 +222,49 @@ export default function Testimonial() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ease-in-out ${
-                  index >= currentSlide && index < currentSlide + cardsToShow
+                className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ease-in-out ${index >= currentSlide && index < currentSlide + cardsToShow
                     ? 'bg-gradient-to-r from-primary to-secondary scale-125 shadow-lg'
                     : 'bg-gray-300 hover:bg-primary/50 hover:scale-110'
-                }`}
+                  }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Bottom CTA Section */}
-        <div className="text-center mt-12 md:mt-16 px-4">
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl md:rounded-2xl p-6 md:p-8 border border-primary/20">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-primary mb-4">
-              Ready to join thousands of successful SEO professionals?
-            </h3>
-            <p className="text-text-secondary text-base md:text-lg mb-6">
-              Start your free trial today and see why top agencies choose Keyword.com
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                Start Free Trial
-              </button>
-              <button className="border-2 border-secondary text-secondary hover:text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-secondary hover:to-primary transform hover:scale-105">
-                View All Reviews
-              </button>
-            </div>
+      </Container>
+      hi
+      <Container className="relative z-10">
+        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl md:rounded-2xl p-6 md:p-8 border border-primary/20">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-primary mb-4">
+            Ready to join thousands of successful SEO professionals?
+          </h3>
+          <p className="text-text-secondary text-base md:text-lg mb-6">
+            Start your free trial today and see why top agencies choose Keyword.com
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              Start Free Trial
+            </button>
+            <button className="border-2 border-secondary text-secondary hover:text-white font-semibold py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-secondary hover:to-primary transform hover:scale-105">
+              View All Reviews
+            </button>
           </div>
         </div>
-      </div>
+      </Container>
 
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-    </section>
-  )
-}
+      </FullContainer>
+    )
+  }
+  
+  <style jsx>{`
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `}</style>

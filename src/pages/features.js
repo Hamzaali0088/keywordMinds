@@ -20,7 +20,7 @@ export default function Features() {
       {/* Hero Section */}
       <FullContainer className="bg-background-light">
         <Container>
-          <div className="text-center py-20 md:py-32">
+          <div className="text-center py-20 md:py-32 pt-30 md:pt-45">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
               Powerful Features for SEO Success
             </h1>

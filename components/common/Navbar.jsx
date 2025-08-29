@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import Container from './Container'
 import FullContainer from './FullContainer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
     const [whoWeHelpOpen, setWhoWeHelpOpen] = useState(false);
@@ -95,17 +96,9 @@ export default function Navbar() {
                 <Container className='flex flex-row justify-between items-center py-4 relative'> 
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2">
-                        <div className="relative w-8 h-8">
-                            {/* Stylized K with overlapping shapes */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                                            <div className="w-6 h-6 bg-primary rounded-sm transform rotate-12 transition-transform duration-300 hover:rotate-45"></div>
-                            <div className="w-6 h-6 bg-secondary rounded-sm transform -rotate-12 absolute transition-transform duration-300 hover:-rotate-45"></div>
-                            <div className="w-6 h-6 bg-primary rounded-sm transform rotate-6 absolute transition-transform duration-300 hover:rotate-12"></div>
-                            </div>
-                            <span className="absolute inset-0 flex items-center justify-center text-white font-bold text-sm">K</span>
-                        </div>
-                        <span className="text-text-primary font-medium">keyword.com</span>
-                    </Link>
+                      <Image src="/st-images/logo.png" alt="Logo" width={32} height={32} />
+                        <span className="text-text-primary font-medium">keyword minds</span>
+                    </Link> 
 
                     {/* Desktop Navigation Menu */}
                     <div className="hidden lg:flex items-center space-x-8">

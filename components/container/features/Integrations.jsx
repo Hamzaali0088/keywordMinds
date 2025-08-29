@@ -35,9 +35,6 @@ export default function Integrations() {
                     <h4 className="text-lg font-semibold text-white">Google Analytics</h4>
                     <p className="text-white/80">Connect your GA4 data for comprehensive insights</p>
                   </div>
-                  <div className="w-12 h-6 bg-white bg-opacity-20 rounded-full relative">
-                    <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1"></div>
-                  </div>
                 </div>
               </div>
 
@@ -50,9 +47,6 @@ export default function Integrations() {
                   <div className="flex-1">
                     <h4 className="text-lg font-semibold text-white">Search Console</h4>
                     <p className="text-white/80">Import GSC data for enhanced reporting</p>
-                  </div>
-                  <div className="w-12 h-6 bg-white bg-opacity-20 rounded-full relative">
-                    <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1"></div>
                   </div>
                 </div>
               </div>
@@ -67,9 +61,6 @@ export default function Integrations() {
                     <h4 className="text-lg font-semibold text-white">Looker Studio</h4>
                     <p className="text-white/80">Create custom dashboards with our data</p>
                   </div>
-                  <div className="w-12 h-6 bg-white bg-opacity-20 rounded-full relative">
-                    <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1"></div>
-                  </div>
                 </div>
               </div>
 
@@ -82,9 +73,6 @@ export default function Integrations() {
                   <div className="flex-1">
                     <h4 className="text-lg font-semibold text-white">Full API Access</h4>
                     <p className="text-white/80">RESTful API with comprehensive endpoints</p>
-                  </div>
-                  <div className="w-12 h-6 bg-white bg-opacity-20 rounded-full relative">
-                    <div className="w-4 h-4 bg-white rounded-full absolute top-1 right-1"></div>
                   </div>
                 </div>
               </div>

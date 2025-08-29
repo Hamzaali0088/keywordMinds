@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Container from '../../common/Container';
 
 export default function Growth() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +30,7 @@ export default function Growth() {
 
   return (
     <div className="min-h-screen bg-background-light py-16 px-4" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto">
+      <Container className="">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           
@@ -162,7 +163,7 @@ export default function Growth() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
 
       <style jsx>{`
         @keyframes fade-in {
